@@ -1,0 +1,3 @@
+[console_scripts]
+listmanager-cli = listmanager.cli:main
+listmanager-gui = listmanager.gui:main

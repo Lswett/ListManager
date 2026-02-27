@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: listmanager
+Version: 0.1.0
+Summary: Tools to merge and validate mailing list spreadsheets.
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.0
+Requires-Dist: openpyxl>=3.1
+Requires-Dist: PySide6>=6.6
+Requires-Dist: dbfread>=2.0
+Requires-Dist: qt-material>=2.14
+Requires-Dist: pyqtdarktheme>=1.4
+Provides-Extra: build
+Requires-Dist: pyinstaller>=6.3; extra == "build"
+
+# ListManager
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+This installs the project in editable mode from the `src/` layout along with the required dependencies.
+
+## CLI Usage
+
+```
+python -m listmanager.cli --outdir out
+```
+
+Optional flags:
+- `--inputdir PATH` (default `ListInput`)
+- `--start-row N` (default `8`)
+
+## GUI Usage
+
+1. Install dependencies listed above.
+2. Run `python -m listmanager.gui` (or `python gui.py` for the compatibility wrapper).
+3. Choose the input and output directories, set the **Data Start Row** value, then select **Run Merge**.
+4. Use **Settings -> Theme** to switch between the qt-material light look or the PyQtDarkTheme-powered dark mode.
+
+The GUI lists all supported `.csv/.xlsx/.xlsm/.xls` files it will process, streams log output while merging, and uses the built-in configuration (only the **Data Start Row** is user-adjustable).
+
+### DBF Column Breakdown (GUI)
+
+The GUI now includes a **DBF Breakdown** tab:
+
+- Pick a `.dbf` file via **Select DBF File...**
+- Select which column to analyze/split by (auto-defaulting to `SCHOOL`) and click **Analyze** to compute counts, view validation summaries (hard-stop vs review rules), and see barcode warnings.
+- Click **Export Lists** to save the current dataset even if warnings or errors are present, or choose **Create Clean List** to review every rule (with descriptions/row numbers) and quarantine selected ones. After creating a clean list, use **Export Clean List** and **Export Quarantined Rows** to write per-column CSVs (quarantined rows carry `ERROR_REASON` notes). Review-only warnings appear in a yellow banner but do not block export.
+- Use **Clear Log** on the Merge tab to reset logs; use the DBF tab status and validation summary to monitor progress.
+
+## Build a Windows Executable
+
+This repository ships with a PyInstaller spec (`listmanager_gui.spec`) tailored for the GUI wrapper (`gui.py`). To produce a standalone build:
+
+1. Install the build extra: `pip install -e .[build]`
+2. From the project root, run: `pyinstaller --clean --noconfirm listmanager_gui.spec`
+3. The packaged app lives in `dist/ListManager/` with `ListManager.exe` as the entry point. Distribute the entire folder so the bundled Qt plugins and resources remain alongside the executable.
+
+The spec bundles everything the GUI needs (Qt plugins, resources, and your code). Update the `datas` list inside the spec if you need to ship additional assets.

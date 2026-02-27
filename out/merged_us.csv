@@ -1,0 +1,505 @@
+UniqueFile,School,Company,ATTN,FullName,FirstName,LastName,PrimaryAdd,Address2,City,State,Zip,Zip4,Zip5,Country,CountryNor,SourceFile,Sheet,ErrorReaso,IsUS
+1000000001,BrandonSchools,,,Chase Benson,,,1705 Seymour Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000002,BrandonSchools,,,Hazel Bertich,,,92 South St,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000003,BrandonSchools,,,Natalie Bowles,,,368 Corkwood Dr,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000004,BrandonSchools,,,Blake Bowman,,,2927 S Hadley Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000005,BrandonSchools,,,Nathan Brinker,,,1335 Beth Ln,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000006,BrandonSchools,,,Kurt Briolat,,,2857 S Hadley Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000007,BrandonSchools,,,Makenna Brown,,,1671 Zarieda St,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000008,BrandonSchools,,,Maggie Buhl,,,1668 State Park Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000009,BrandonSchools,,,Wyatt Burns,,,850 Oakwood Rd,Apt 4,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000010,BrandonSchools,,,Jonah Busch,,,4460 Radcliffe Ave,,Flint,MI,48507,,48507,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000011,BrandonSchools,,,Yaretzi Canales Clavel,,,149 S Winding Dr.,,Waterford,MI,48328,,48328,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000012,BrandonSchools,,,Tyler Chesnutt,,,2635 Groveland Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000013,BrandonSchools,,,Breanna Cogley,,,375 Granger Rd,Apt 4,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000014,BrandonSchools,,,Dylan Darling,,,670 Sands Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000015,BrandonSchools,,,Ori Davis,,,1878 Lake Pointe Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000016,BrandonSchools,,,Jacob Dubiel,,,2863 Chevrolet,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000017,BrandonSchools,,,Cavan Duggan,,,7341 Groveland Rd,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000018,BrandonSchools,,,Aliyah Elizondo,,,650 Indian Trail,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000019,BrandonSchools,,,Nyla Fahy,,,15552 Oak Hollow Dr,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000020,BrandonSchools,,,Hazel Frezza,,,860 Village Pine Lane,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000021,BrandonSchools,,,Eduardo Gamez Lopez,,,396 E Princeton Ave,,Pontiac,MI,48340,,48340,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000022,BrandonSchools,,,Nicholas Gilliam,,,1849 Manorhaven,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000023,BrandonSchools,,,Ronald Gilliland III,,,282 Brian Ct,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000024,BrandonSchools,,,Tristan Groom,,,3765 Groveland Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000025,BrandonSchools,,,James Hall,,,2331 Masters St,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000026,BrandonSchools,,,Logan Halstead,,,784 Hidden River Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000027,BrandonSchools,,,Kaeley Harris,,,2056 Dunwoodie St,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000028,BrandonSchools,,,Aquetzalli Hernandez,,,375 S Hadley Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000029,BrandonSchools,,,Hector Hernandez-Garcia,,,P O Box 18,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000030,BrandonSchools,,,Angela Hooper,,,545 N Jossman Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000031,BrandonSchools,,,Brianna Hutchins,,,3420 Meadow Hill Cir,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000032,BrandonSchools,,,Ava Kenski-Motes,,,901 Croup Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000033,BrandonSchools,,,Ava Lawson,,,1590 S Sashabaw Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000034,BrandonSchools,,,Hailey Lemon,,,3965 Nelsey Rd,,Waterford,MI,48329,,48329,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000035,BrandonSchools,,,Emily Leschuk,,,130 Persimmon Dr,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000036,BrandonSchools,,,Amelia Leslie,,,4780 Sawmill Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000037,BrandonSchools,,,Addison Lucia,,,942 Whispering Trail,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000038,BrandonSchools,,,Kilee Mahan,,,10450 Davisburg Rd,,Davisburg,MI,48350,,48350,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000039,BrandonSchools,,,Brooke Martin,,,10489 Jossman Rd,,Goodrich,MI,48438,,48438,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000040,BrandonSchools,,,William McGowen,,,5749 Honert Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000041,BrandonSchools,,,Patience McGraw,,,105 Lockwood Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000042,BrandonSchools,,,Evelyn McKinney,,,320 Kingslyn Farms Ct,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000043,BrandonSchools,,,Madeline McLauchlin,,,1055 Oakbrook Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000044,BrandonSchools,,,Emma Menzies,,,355 Timberwood Trl,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000045,BrandonSchools,,,Vivianne Muehlheim,,,431 Circle Point,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000046,BrandonSchools,,,Joshua Naef,,,1279 Bald Eagle Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000047,BrandonSchools,,,Brody Naismith,,,1400 Houghton Trail,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000048,BrandonSchools,,,Gavin Naismith,,,1400 Houghton Trail,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000049,BrandonSchools,,,Payton Owens,,,4354 Harrier Ln,,Burton,MI,48519,,48519,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000050,BrandonSchools,,,Anakyn Padilla,,,1015 N Saginaw St,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000051,BrandonSchools,,,Jorden Poniatowski,,,1788 Hidden Lake Trail,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000052,BrandonSchools,,,Joel Redburn,,,5982 Oak Hill Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000053,BrandonSchools,,,Jude Reed,,,PO Box 351,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000054,BrandonSchools,,,Ella Rizzo,,,3240 Auten Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000055,BrandonSchools,,,Phinneas Roberts,,,312 Kingslyn Farms Ct,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000056,BrandonSchools,,,Mason Rodriguez,,,5805 Allison Ct,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000057,BrandonSchools,,,Bryce Roe,,,1558 Michael St,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000058,BrandonSchools,,,Hannah Rohrabaugh,,,4920 Groveland,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000059,BrandonSchools,,,Gavin Sallmen,,,3520 Sherwood Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000060,BrandonSchools,,,Bella Schell,,,620 Granger Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000061,BrandonSchools,,,Samuel Schell,,,620 Granger Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000062,BrandonSchools,,,Tyler Schlaire,,,555 Oakwood Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000063,BrandonSchools,,,Madison Schuett,,,648 Autumn Valley Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000064,BrandonSchools,,,Noah Sheldon,,,110 Crescent Hill Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000065,BrandonSchools,,,Jamisyn Sheridan,,,166 Persimmon Dr,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000066,BrandonSchools,,,Faith Smith,,,3704 Chestnut St,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000067,BrandonSchools,,,Joseph Smith,,,5726 Lakeview Blvd,,Goodrich,MI,48438,,48438,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000068,BrandonSchools,,,Isabella Sowles,,,370 Timberwood,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000069,BrandonSchools,,,Makenzie Spurr,,,107 Lockwood Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000070,BrandonSchools,,,Cole Steele,,,11135 Horton,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000071,BrandonSchools,,,Madelyn Suter,,,314 Dogwood Lane,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000072,BrandonSchools,,,Dayten Thompson,,,11365 Horton Rd,,Goodrich,MI,48438,,48438,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000073,BrandonSchools,,,Aubrie Tolonen,,,135 Red Maple Trail,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000074,BrandonSchools,,,Don Tubbs IV,,,911 E Glass Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000075,BrandonSchools,,,Ella Waters,,,5194 Hadley Rd,,Goodrich,MI,48438,,48438,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000076,BrandonSchools,,,Brodie Webber,,,134 Shire Lane,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000077,BrandonSchools,,,Grace Whalen,,,717 Chris Ln,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000078,BrandonSchools,,,Brooklyn Williams,,,2248 Granger Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000079,BrandonSchools,,,Emma Wilson,,,924 Hidden Creek,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000080,BrandonSchools,,,Haidah Marie Abdullah Hoyt,,,3868 Cedar Loop,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000081,BrandonSchools,,,Cole Armstrong,,,2895 S Hadley Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000082,BrandonSchools,,,Kaiden Ballard,,,3864 Seymour Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000083,BrandonSchools,,,Corgen Barkiewicz,,,1340 Duck Creek Ln,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000084,BrandonSchools,,,Natalie Blair,,,1820 N Hurd Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000085,BrandonSchools,,,Ashley Bolan,,,521 Alfred Ct,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000086,BrandonSchools,,,Anthony Bonucchi,,,191 Dena Marie Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000087,BrandonSchools,,,Alaine Breault,,,1481 S Sashabaw Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000088,BrandonSchools,,,Gavin Bruyneel,,,221 Dena Marie Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000089,BrandonSchools,,,Caelan Burgess,,,3150 Groveland Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000090,BrandonSchools,,,Lola Carthans,,,169 Myron St,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000091,BrandonSchools,,,Chase Compau,,,1026 Hidden Crk,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000092,BrandonSchools,,,Zoi-Anne Crawford,,,3605 Hawthorne St,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000093,BrandonSchools,,,Adam D'Ambrosio,,,455 Sands Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000094,BrandonSchools,,,DeLaiya DeVos,,,707 West Glass Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000095,BrandonSchools,,,Aubrey DeWyse,,,1680 State Park Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000096,BrandonSchools,,,Jovie Dudek,,,255 Lancelot Lane,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000097,BrandonSchools,,,Chase Dunbar,,,1826 Hidden Lake Trl,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000098,BrandonSchools,,,Tory Fisher,,,3651 Juniper,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000099,BrandonSchools,,,Theodore Gantz,,,2610 Jossman Rd,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000100,BrandonSchools,,,Alexia Glomski,,,936 N Force Rd,,Attica,MI,48412,,48412,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000101,BrandonSchools,,,Kamryn Goff,,,1855 Ardsley,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000102,BrandonSchools,,,Payton Grant,,,1841 Trueman Ct,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000103,BrandonSchools,,,Derek Hanewacker,,,2088 Perry Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000104,BrandonSchools,,,Madelyn Heading,,,6377 Golf View Dr,,Clarkston,MI,48346,,48346,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000105,BrandonSchools,,,Olivia Hevel,,,518 Ravenwood Ct,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000106,BrandonSchools,,,Maddison Heverly,,,2152 Hidden Lake Trail,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000107,BrandonSchools,,,Brody Kalso,,,771 Whispering Trail,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000108,BrandonSchools,,,LillyAnn Kilburn,,,1982 Bart Ave,,Warren,MI,48091,,48091,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000109,BrandonSchools,,,Khloe Kobe,,,1020 Oakwood Rd,Apt 206,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000110,BrandonSchools,,,Isabella Lor,,,1866 Oakwood Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000111,BrandonSchools,,,Ryan Lor-Vue,,,4908 Sawmill Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000112,BrandonSchools,,,Bryce Martin,,,2340 High Meadows Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000113,BrandonSchools,,,Grace Mastin,,,2750 S Hadley Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000114,BrandonSchools,,,Jackson Mayhew,,,5805 Allison Ct,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000115,BrandonSchools,,,Meadow McBride,,,4043 Poli Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000116,BrandonSchools,,,Avah McClain,,,2137 S Sashabaw,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000117,BrandonSchools,,,Christopher McCombs,,,2230 Stonewall Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000118,BrandonSchools,,,Samantha McDonald,,,1708 N Hadley,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000119,BrandonSchools,,,Hailey McHugh,,,2240 S Sashabaw Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000120,BrandonSchools,,,Braeden McKinney,,,335 Kingslyn Farms Ct,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000121,BrandonSchools,,,Logan Mendoza,,,3653 Granger Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000122,BrandonSchools,,,Antoine Milton II,,,4405 Fir St,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000123,BrandonSchools,,,Brayden Montgomery,,,3166 Wild Orchid Lane,,Burton,MI,48519,,48519,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000124,BrandonSchools,,,Carolyn Murphy,,,976 Lockwood,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000125,BrandonSchools,,,Taisiia Mushchenko,,,7060 Burkenhead Place,,Lambertville,MI,48114,,48114,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000126,BrandonSchools,,,Christian Newby,,,679 Bald Eagle Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000127,BrandonSchools,,,Calvin Oles,,,1143 Oakwood Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000128,BrandonSchools,,,Devin Persinger,,,4890 Sawmill Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000129,BrandonSchools,,,Eleanor Peterson,,,15408 Oak Hollow Dr,,Holly,MI,48442,,48442,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000130,BrandonSchools,,,Aubrie Phillips,,,326 Corkwood Dr,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000131,BrandonSchools,,,Miriam Pizziketti,,,166 Lakeshore Dr,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000132,BrandonSchools,,,Vanessa Pruitt,,,66 Dunlap,,Oxford,MI,48371,,48371,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000133,BrandonSchools,,,Joshua Querio,,,745 Orchard Ridge Ct,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000134,BrandonSchools,,,Richard Reneaud III,,,5784 Island Dr,,Goodrich,MI,48438,,48438,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000135,BrandonSchools,,,Maddison Reyes,,,2155 Hummer Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000136,BrandonSchools,,,Jacquelin Romero-Mendoza,,,4336 Fir St,,Clarkston,MI,48348,,48348,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000137,BrandonSchools,,,Eric Rose,,,7021 E Carpenter Rd,,Davison,MI,48423,,48423,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000138,BrandonSchools,,,Lillian Saterstad,,,270 Cedar St,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000139,BrandonSchools,,,Emmett Schweitzer,,,363 E Glass Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000140,BrandonSchools,,,Caleb Shields,,,321 Wolfe Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000141,BrandonSchools,,,Gabriella Siljanovski,,,5 N Church St,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000142,BrandonSchools,,,Aaron Smith,,,7076 Mather St,,Waterford,MI,48327,,48327,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000143,BrandonSchools,,,Sapphire Smith,,,2620 Flint Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000144,BrandonSchools,,,Luke Stein,,,4642 Hummer Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000145,BrandonSchools,,,Elliott Swain,,,3525 Lakeview Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000146,BrandonSchools,,,Jessica Swift,,,1800 Granger Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000147,BrandonSchools,,,Alexander Thompson,,,420 Arbor Pine,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000148,BrandonSchools,,,Ryleigh Thomson,,,760 Grange Hall Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000149,BrandonSchools,,,Macey Toutant,,,1600 Michael,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000150,BrandonSchools,,,Rylee VanSipe,,,2420 High Meadows Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000151,BrandonSchools,,,Troy Wychuyse,,,3470 Lakeview Dr,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000152,BrandonSchools,,,Jack Wyman,,,2450 Perry Lake Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+1000000153,BrandonSchools,,,Lukas Yatouma,,,355 Wolfe Rd,,Ortonville,MI,48462,,48462,,US,BrandonSchools.xlsx,FULLNAME,,True
+2000000001,ByronSchools,,,"Anderson, Lila Beth",,,5262 Duffield,,Swartz Creek,MI,48473,,48473,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000002,ByronSchools,,,"Armstrong, Kiptyn Randall",,,15184 Murray Woods Ct,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000003,ByronSchools,,,"Bohm, Ella Rayne",,,12722 New Lothrop,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000004,ByronSchools,,,"Brown, Adalen Marie",,,8910 Deadwood Ln,,Gaines,MI,48436,,48436,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000005,ByronSchools,,,"Cook, Warren Edward",,,15156 Bird Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000006,ByronSchools,,,"Cooper, Abigail Stella",,,319 W Maple St,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000007,ByronSchools,,,"Echlin, Iris Autumn",,,10120 Byron Rd,,Howell,MI,48855,,48855,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000008,ByronSchools,,,"George, Spencer Lee",,,109 Hamilton St,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000009,ByronSchools,,,"Harper, Abigail Marie",,,14503 Bird Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000010,ByronSchools,,,"Hartman, Connor Daniel",,,9492 Foxwell Cir,,Fenton,MI,48430,,48430,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000011,ByronSchools,,,"Hertz, Jaden Richard",,,10070 Byron Rd,,Howell,MI,48855,,48855,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000012,ByronSchools,,,"Hetchler, Brody Jackson",,,309 N Saginaw St,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000013,ByronSchools,,,"Hoganson, Christopher Anthony",,,12974 New Lothrop Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000014,ByronSchools,,,"Hoskins, Charles Eugene",,,16024 Duffield Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000015,ByronSchools,,,"Keway, Christian Michael",,,12289 Sheridan Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000016,ByronSchools,,,"Kinaitis, Jayden Leeland Anthony",,,524 W Maple St,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000017,ByronSchools,,,"L'Esperance, Jason Thomas",,,11110 Oakwood Dr,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000018,ByronSchools,,,"MacKay, William Edward Michael",,,539 S Saginaw St,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000019,ByronSchools,,,"Murphree, Claire Lourdes",,,8999 E Cole Rd,,Durand,MI,48429,,48429,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000020,ByronSchools,,,"Nelson, Colten Wylie",,,16118 Duffield Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000021,ByronSchools,,,"Paldan, Brianna June",,,15507 Lillie Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000022,ByronSchools,,,"Poissant, Jeremy Tracy",,,11731 Secluded Ridge Dr,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000023,ByronSchools,,,"Taylor-Ross, Evelynn Marie",,,10199 Silver Lake Road,,Linden,MI,48451,,48451,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000024,ByronSchools,,,"Vincent, Brayden Lee Geoffrey",,,10244 Lehring Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000025,ByronSchools,,,"Argue, Parker Noelle",,,5333 Worchester Dr,,Swartz Creek,MI,48473,,48473,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000026,ByronSchools,,,"Chapman, Kara Ellen",,,12070 S Barnes Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000027,ByronSchools,,,"Conlin, Joie Victoria",,,205 W Fauble St,,Durand,MI,48429,,48429,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000028,ByronSchools,,,"Erickson, Jessica Johnay",,,14500 Barnes Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000029,ByronSchools,,,"Flannery, Sierra Lynn",,,320 N Ann St,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000030,ByronSchools,,,"Hooley, Halston Robert",,,13800 Bancroft,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000031,ByronSchools,,,"James, Vanessa Jade",,,10428 Byron Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000032,ByronSchools,,,"Keway, Mya Indaanis",,,12289 Sheridan Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000033,ByronSchools,,,"L'Esperance, Aila Susan",,,11110 Oakwood Dr,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000034,ByronSchools,,,"Lewis, Kaitlyn Rianna",,,10734 Lehring Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000035,ByronSchools,,,"Panula, Addison Rae",,,10645 S Barnes Rd,,Durand,MI,48429,,48429,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000036,ByronSchools,,,"Peveler, Autumn Rose Marie",,,8757 Bath Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000037,ByronSchools,,,"Quimby, Daisy Jae",,,"15605 Pine Ridge Dr, #12",,Linden,MI,48451,,48451,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000038,ByronSchools,,,"Ritter, Evan Jack",,,13542 New Lothrop,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000039,ByronSchools,,,"Selon, Adilyn Kathleen",,,10764 S New Lothrop Rd,,Durand,MI,48429,,48429,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000040,ByronSchools,,,"Spencer, Jonah Lawrence",,,14410 Duffield Rd,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000041,ByronSchools,,,"Voyle, Breeanna Louise",,,521 W Maple St,,Byron,MI,48418,,48418,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000042,ByronSchools,,,"Walton, Davis Edwina",,,11151 Cook Rd,,Gaines,MI,48436,,48436,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000043,ByronSchools,,,"Ward, Jessica James",,,11818 Fleming Rd,,Fowlerville,MI,48836,,48836,,US,ByronSchools.xlsx,FULLNAME,,True
+2000000044,ByronSchools,,,"Wilcox, Harper Grace",,,11072 N Latson Rd,,Linden,MI,48451,,48451,,US,ByronSchools.xlsx,FULLNAME,,True
+3000000001,ClarkstonSchools,,,"Abell, Xavier D.",,,6170 Stonewood Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000002,ClarkstonSchools,,,"Adams, Ryder W.",,,7462 Fen Ridge,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000003,ClarkstonSchools,,,"Agar, Ella R.",,,7239 N Village Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000004,ClarkstonSchools,,,"Agar, Will E.",,,7239 N Village Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000005,ClarkstonSchools,,,"Alas, Liliana K.",,,5625 Morning,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000006,ClarkstonSchools,,,"Alexander, Claire S.",,,7172 Ingomar Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000007,ClarkstonSchools,,,"Allemon, Riley A.",,,5458 Ridge Tr N,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000008,ClarkstonSchools,,,"Anderson, Evelyn S.",,,8111 Remington Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000009,ClarkstonSchools,,,"Anderson, Locke R.",,,6094 Cramlane Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000010,ClarkstonSchools,,,"Anzicek, Gina M.",,,10750 King Rd,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000011,ClarkstonSchools,,,"Artiss, William C.",,,5884 Kingfisher Ln,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000012,ClarkstonSchools,,,"Atwell, Addison R.",,,5719 Shannon Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000013,ClarkstonSchools,,,"Avallone, Presley S.",,,10120 Creekwood Tr,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000014,ClarkstonSchools,,,"Babbish, Logan A.",,,5110 Old Cove Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000015,ClarkstonSchools,,,"Baer, Miles D.",,,5378 Pheasant Run Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000016,ClarkstonSchools,,,"Barens, Owen T.",,,7914 Jennifer Agnes Ave,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000017,ClarkstonSchools,,,"Bean, Isabella R.",,,9211 Marenpo Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000018,ClarkstonSchools,,,"Beckley, Bennett R.",,,9088 Sashabaw Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000019,ClarkstonSchools,,,"Benson, Anders W.",,,7524 Maple Ridge Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000020,ClarkstonSchools,,,"Bessert, Grace K.",,,9836 Creekwood Tr,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000021,ClarkstonSchools,,,"Bird, Kayah R.",,,4575 Major Ave,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000022,ClarkstonSchools,,,"Blackburn, Cameron J.",,,5721 Fenwick Pl,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000023,ClarkstonSchools,,,"Blasko, Kaia A.",,,10280 Ellis Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000024,ClarkstonSchools,,,"Bohan, Anna J.",,,8119 Pebble Creek Dr,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000025,ClarkstonSchools,,,"Bond, Brooke A.",,,7504 Ridge Valley Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000026,ClarkstonSchools,,,"Boose, Avery I.",,,5757 Chestnut Hill Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000027,ClarkstonSchools,,,"Bosse, Zachary B.",,,5625 Wembley Ct,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000028,ClarkstonSchools,,,"Bowers, Avery G.",,,8631 Hidden Acre Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000029,ClarkstonSchools,,,"Brandon, Sawyer J.",,,8180 Cotswold Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000030,ClarkstonSchools,,,"Bristow, Sydney G.",,,5707 Berwick Ct,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000031,ClarkstonSchools,,,"Brown, Logan L.",,,8686 S Shore Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000032,ClarkstonSchools,,,"Brumbaugh, Gwenyth M.",,,4532 Palmetto Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000033,ClarkstonSchools,,,"Buchholz, Jameson J.",,,8201 Caribou Tr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000034,ClarkstonSchools,,,"Buikema, Ava L.",,,9340 Rattalee Lake Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000035,ClarkstonSchools,,,"Burns, Annabell L.",,,6640 Langle Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000036,ClarkstonSchools,,,"Cameron, Ainsley D.",,,5835 Kingfisher Ln,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000037,ClarkstonSchools,,,"Caputo, Keilana E.",,,4915 Fox Creek Dr #276,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000038,ClarkstonSchools,,,"Carpenter, Cade J.",,,380 Coyote Run,,Holly,MI,48442,,48442,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000039,ClarkstonSchools,,,"Carpenter, Melissa A.",,,6701 Pear Ln,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000040,ClarkstonSchools,,,"Catinella, Elena L.",,,6997 Oak Hill Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000041,ClarkstonSchools,,,"Cavallini, Bianca S.",,,5018 Shoreham Ci,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000042,ClarkstonSchools,,,"Ceo, Ryan J.",,,8950 Morning Mist Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000043,ClarkstonSchools,,,"Chacon, Alexandra",,,2500 Mann Rd #87,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000044,ClarkstonSchools,,,"Charter, Ella K.",,,4882 Spring Meadow Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000045,ClarkstonSchools,,,"Clay, Amelia F.",,,8561 Andersonville Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000046,ClarkstonSchools,,,"Cole, Kaylee M.",,,4404 Pinedale Ave,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000047,ClarkstonSchools,,,"Collier, Atahlia H.",,,6405 Washington St E,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000048,ClarkstonSchools,,,"Collins, Marcus A.",,,4763 Oak Grove Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000049,ClarkstonSchools,,,"Collins, Tinsley R.",,,38029 Verona Dr,,Clinton Twp,MI,48036,,48036,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000050,ClarkstonSchools,,,"Colone, Lily K.",,,10181 Horseshoe Ci,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000051,ClarkstonSchools,,,"Conway, Kenneth C.",,,9821 Sashabaw Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000052,ClarkstonSchools,,,"Cortes, Isabella V.",,,3120 Montclair Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000053,ClarkstonSchools,,,"Craig, Tyler E.",,,5285 Glenwood Crk,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000054,ClarkstonSchools,,,"Crisostomo Medellin, Isabella",,,1385 Burrus Rd,,Ortonville,MI,48462,,48462,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000055,ClarkstonSchools,,,"Crocker, Quinn R.",,,5361 Heath Ave,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000056,ClarkstonSchools,,,"Crockett, Nolan L.",,,4584 Oakhurst Ridge Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000057,ClarkstonSchools,,,"Crowe, Anthony J.",,,4948 Hillcrest Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000058,ClarkstonSchools,,,"Cumberworth, Kylin M.",,,4355 Bluff Pointe Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000059,ClarkstonSchools,,,"Curry, Claire L.",,,5614 Adderstone Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000060,ClarkstonSchools,,,"Daniel, Annalise S.",,,5443 Woodcreek Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000061,ClarkstonSchools,,,"Daniel, Elianna B.",,,5443 Woodcreek Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000062,ClarkstonSchools,,,"Danielson, Reese D.",,,6031 Middle Lake Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000063,ClarkstonSchools,,,"d'Argy, Alexis S.",,,7840 Ridge Valley Dr #8,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000064,ClarkstonSchools,,,"Dasuqi, Shane R.",,,7940 Maceday Lake Rd,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000065,ClarkstonSchools,,,"D'Autremont, Adalynn G.",,,5350 Columbia St,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000066,ClarkstonSchools,,,"Davidson, Andrew C.",,,4995 Rockaway Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000067,ClarkstonSchools,,,"DiJanni, Drea A.",,,9970 Sashabaw Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000068,ClarkstonSchools,,,"Dimock, Kara L.",,,7313 Village Park Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000069,ClarkstonSchools,,,"Dodson, Alen A.",,,6844 Balmoral Ter,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000070,ClarkstonSchools,,,"Doherty, Eva M.",,,5723 Shannon Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000071,ClarkstonSchools,,,"Dost, Harper M.",,,4581 Maybee Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000072,ClarkstonSchools,,,"Dougherty, Violet M.",,,6815 Hubbard Ci,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000073,ClarkstonSchools,,,"Drallos, Amelia M.",,,3085 Montclair Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000074,ClarkstonSchools,,,"Drouin, Harper M.",,,5900 Sunridge Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000075,ClarkstonSchools,,,"Dubeck, Lucille M.",,,114 N Main St,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000076,ClarkstonSchools,,,"Duch, Eva M.",,,7839 High Ridge Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000077,ClarkstonSchools,,,"Dufour, Collin M.",,,8435 Zeerco Bl,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000078,ClarkstonSchools,,,"Dunfield, Brooke L.",,,6416 Woodglen Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000079,ClarkstonSchools,,,"Dunfield, Kylie J.",,,6416 Woodglen Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000080,ClarkstonSchools,,,"Dunn, Madeline T.",,,8635 Deerwood Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000081,ClarkstonSchools,,,"Eastman, Griffin J.",,,9999 Pebble Creek Ct,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000082,ClarkstonSchools,,,"Eaton, Julian W.",,,6300 Ware Rd,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000083,ClarkstonSchools,,,"Eddy, Molly Jo E.",,,11681 Old Oaks Dr,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000084,ClarkstonSchools,,,"Edwards, William C.",,,4583 Ennismore Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000085,ClarkstonSchools,,,"Ehlen, Leah G.",,,6152 Foxfire Ci,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000086,ClarkstonSchools,,,"Ellingsworth, Jacalyn E.",,,5724 Shannon Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000087,ClarkstonSchools,,,"Erkfritz, Spencer N.",,,7514 Maceday Lake Rd,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000088,ClarkstonSchools,,,"Eubanks, Keagen E.",,,6041 Campfire Ci,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000089,ClarkstonSchools,,,"Evans, Avery M.",,,5350 Hillcrest Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000090,ClarkstonSchools,,,"Farner, Lydia G.",,,9347 Brucedale Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000091,ClarkstonSchools,,,"Farrell, Sylvie R.",,,8722 S Shore Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000092,ClarkstonSchools,,,"Ferman, Olivia J.",,,4151 W Pointe Dr,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000093,ClarkstonSchools,,,"Flavin, Bella G.",,,4998 Spring Meadow Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000094,ClarkstonSchools,,,"Fonseca, Sylvia B.",,,6595 Eastlawn Ave,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000095,ClarkstonSchools,,,"Formaro, Evelyn I.",,,5927 Sunridge Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000096,ClarkstonSchools,,,"Foster, Aidan C.",,,6915 Stone Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000097,ClarkstonSchools,,,"Foust, Parker M.",,,6252 Cheshire Park Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000098,ClarkstonSchools,,,"Franco Gonzalez, Jimena S.",,,2500 Mann Rd #315,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000099,ClarkstonSchools,,,"Fry, Jackson A.",,,8678 Thendara Bl,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000100,ClarkstonSchools,,,"Frye, Malorie E.",,,2500 Mann Rd #238,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000101,ClarkstonSchools,,,"Fullerton, Sophia H.",,,5619 Fox Ridge Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000102,ClarkstonSchools,,,"Gabbard, Rylee L.",,,5248 Eastview Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000103,ClarkstonSchools,,,"Gammon, Madison A.",,,4834 Hunters Creek Rd,,Attica,MI,48412,,48412,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000104,ClarkstonSchools,,,"Garvin, Amelia J.",,,9415 Whipple Shores Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000105,ClarkstonSchools,,,"Gauthier, Isaac A.",,,4137 Binghampton Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000106,ClarkstonSchools,,,"Gaw, Aubrey D.",,,4676 4th St,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000107,ClarkstonSchools,,,"George, Thomas T.",,,4387 Pelton Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000108,ClarkstonSchools,,,"Gilbert, Lila M.",,,5890 Meadows Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000109,ClarkstonSchools,,,"Gladwish, Chase M.",,,5441 Waldon Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000110,ClarkstonSchools,,,"Goldstein, Brenden J.",,,5542 Clarkston Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000111,ClarkstonSchools,,,"Gonzalvo, Aurora M.",,,10106 Creekwood Tr,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000112,ClarkstonSchools,,,"Graves, Addison J.",,,5455 Morgan Lake Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000113,ClarkstonSchools,,,"Graves, Makayla C.",,,6002 S Main St,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000114,ClarkstonSchools,,,"Guerin, Ava L.",,,5836 Chestnut Hill Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000115,ClarkstonSchools,,,"Gushen, William N.",,,9416 Whipple Shores Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000116,ClarkstonSchools,,,"Gutierrez, Isabella S.",,,7365 Oak Hill Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000117,ClarkstonSchools,,,"Hadding, Brendan M.",,,4584 Lancaster Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000118,ClarkstonSchools,,,"Hadley, Chandler J.",,,9147 Lakebluff Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000119,ClarkstonSchools,,,"Hahn, Joseph M.",,,7854 Twins Dr,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000120,ClarkstonSchools,,,"Haneline, Charlotte L.",,,5006 Algonquin Bl,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000121,ClarkstonSchools,,,"Hardin, Aryanna F.",,,5405 Old Cove Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000122,ClarkstonSchools,,,"Harms-Clement, Ellie C.",,,8980 Sashabaw Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000123,ClarkstonSchools,,,"Harpster, Aidan M.",,,7240 Deerhill Ct,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000124,ClarkstonSchools,,,"Harrell, Ella J.",,,6401 Oak Hill Rd,,Ortonville,MI,48462,,48462,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000125,ClarkstonSchools,,,"Harris, Scarlett E.",,,5119 Eastview Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000126,ClarkstonSchools,,,"Harrison, Mackenzie J.",,,7673 Red Oak Valley Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000127,ClarkstonSchools,,,"Havens, Dylan M.",,,5144 Woodcreek Tr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000128,ClarkstonSchools,,,"Hayward, Dacoda J.",,,5405 Lancaster Hills Dr #37,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000129,ClarkstonSchools,,,"Heinrich, Nathan W.",,,8103 Pebble Creek Dr,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000130,ClarkstonSchools,,,"Hemsworth, Parker R.",,,7380 Scenic Ridge Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000131,ClarkstonSchools,,,"Hentkowski, Logan D.",,,6649 Loch Moor Ct,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000132,ClarkstonSchools,,,"Herrin, Isabel R.",,,4332 Coastal Pw,,White Lake,MI,48386,,48386,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000133,ClarkstonSchools,,,"Heslip, Gage C.",,,4101 Meyers Rd,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000134,ClarkstonSchools,,,"Hoang, Audrey L.",,,5612 Birch Ln,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000135,ClarkstonSchools,,,"Hohlbein, Graham C.",,,6766 Canterbury Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000136,ClarkstonSchools,,,"Holsworth, Cassidy J.",,,5430 Sunnyside Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000137,ClarkstonSchools,,,"Hotchkiss, Ellie M.",,,5920 Sunridge Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000138,ClarkstonSchools,,,"Hotchkiss, Nicholas L. (He/Him)",,,5920 Sunridge Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000139,ClarkstonSchools,,,"Howell, William J.",,,5657 Golf Pointe Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000140,ClarkstonSchools,,,"Hoyle, Rory M.",,,4801 Eagle Springs Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000141,ClarkstonSchools,,,"Hudson, Shelby E.",,,6174 Cheshire Park Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000142,ClarkstonSchools,,,"Hyde, Juliana R.",,,5815 Mary Sue St,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000143,ClarkstonSchools,,,"Hyer, Stephen J. III",,,8250 Lost Pines Dr,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000144,ClarkstonSchools,,,"Issac, Mila R.",,,6684 Goldfinch Ln,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000145,ClarkstonSchools,,,"Izydorek, Katelyn B.",,,7868 Holcomb Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000146,ClarkstonSchools,,,"Jaskulka, Brandon F.",,,5815 Meadows Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000147,ClarkstonSchools,,,"Jaskulka, Logan F.",,,5815 Meadows Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000148,ClarkstonSchools,,,"Jasper, Grace A.",,,8744 Deerwood Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000149,ClarkstonSchools,,,"Johnson, Kaylynn L.",,,9780 Allen Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000150,ClarkstonSchools,,,"Jones, Emily G.",,,7152 Snow Apple Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000151,ClarkstonSchools,,,"Juzysta, Anna G.",,,3020 Richmond Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000152,ClarkstonSchools,,,"Katakowski, Anna J.",,,6166 Paramus,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000153,ClarkstonSchools,,,"Kircher, Mckenna M.",,,7472 Wyngate Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000154,ClarkstonSchools,,,"Klages, Stella C.",,,8991 Deerwood Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000155,ClarkstonSchools,,,"Klenow, Jack N.",,,5026 Mystic Ridge Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000156,ClarkstonSchools,,,"Koral, Charlotte R.",,,7961 Brook Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000157,ClarkstonSchools,,,"Kramer, Mackenzie D.",,,12109 Shaffer Rd,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000158,ClarkstonSchools,,,"Kramer, Mikayla L.",,,5477 Boulderwood Ridge,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000159,ClarkstonSchools,,,"Leaver, Kristen G.",,,11420 Shaffer Rd,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000160,ClarkstonSchools,,,"Legg, Ryan M.",,,8224 Caribou Tr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000161,ClarkstonSchools,,,"Leininger, Ryan A.",,,6347 Golf View Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000162,ClarkstonSchools,,,"Levitt, Trevor A.",,,4891 Parview Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000163,ClarkstonSchools,,,"Logan, Shay A.",,,4527 Palmetto Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000164,ClarkstonSchools,,,"Lopiccolo, Elizabeth G.",,,4455 Coastal Pw,,White Lake,MI,48386,,48386,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000165,ClarkstonSchools,,,"Lor, Sidon H.",,,5020 Maybee Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000166,ClarkstonSchools,,,"Ludwa, Keynan D.",,,10520 King Rd,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000167,ClarkstonSchools,,,"Lutz, Mason C.",,,5011 Bordeaux Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000168,ClarkstonSchools,,,"MacMillan, Mikayla L.",,,8863 Andersonville Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000169,ClarkstonSchools,,,"Mado, Luke M.",,,7276 Ardsley Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000170,ClarkstonSchools,,,"Mahaffy, Miles J.",,,8472 Perry Lake Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000171,ClarkstonSchools,,,"Malec, Holden C.",,,7822 Brook Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000172,ClarkstonSchools,,,"Malys, Edmund B.",,,8369 Brookstone Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000173,ClarkstonSchools,,,"Malys, Grady J.",,,8369 Brookstone Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000174,ClarkstonSchools,,,"Marsden, Matilda A.",,,6140 Havelock Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000175,ClarkstonSchools,,,"Martin, Carson J.",,,5846 Flemings Lake Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000176,ClarkstonSchools,,,"Martin, Logan E.",,,7284 Ardsley Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000177,ClarkstonSchools,,,"Martinez Zarrabal, Sergio",,,165 N River Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000178,ClarkstonSchools,,,"McClellan, Kayleigh J.",,,8522 Harbortowne Ci,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000179,ClarkstonSchools,,,"McCullough, Charles J.",,,6422 Woodglen Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000180,ClarkstonSchools,,,"McGrath, Elizabeth C.",,,8062 Marshwood Ci,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000181,ClarkstonSchools,,,"McIntyre, Carson W.",,,5633 Fox Ridge Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000182,ClarkstonSchools,,,"McNaughton, Cooper G.",,,8407 Deerwood Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000183,ClarkstonSchools,,,"Mercado, Victoria M.",,,96 S River Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000184,ClarkstonSchools,,,"Miles, Sydney V.",,,8855 White Lake Rd,,White Lake,MI,48386,,48386,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000185,ClarkstonSchools,,,"Miller, Kenzie L.",,,4875 Pine Knob Ln,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000186,ClarkstonSchools,,,"Mohr, Julien B.",,,6871 Hubbard Ci,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000187,ClarkstonSchools,,,"Mooney, Graham G.",,,4925 Spring Meadow Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000188,ClarkstonSchools,,,"Moore, Calista M.",,,4344 Coastal Pw,,White Lake,MI,48386,,48386,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000189,ClarkstonSchools,,,"Morgan, Benjamin S.",,,6264 Cheshire Park Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000190,ClarkstonSchools,,,"Mueller, Calley M.",,,9881 Clark Rd,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000191,ClarkstonSchools,,,"Nemode, Blair M.",,,9364 Ellis Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000192,ClarkstonSchools,,,"Newton, Aidan S.",,,4910 Cecelia Ann Ave,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000193,ClarkstonSchools,,,"Nielubowicz, Zachary D.",,,6961 Cranberry Lake Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000194,ClarkstonSchools,,,"Niemi, Corryn K.",,,5800 Silver Birch,,Ortonville,MI,48462,,48462,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000195,ClarkstonSchools,,,"Novak, Mason D.",,,10480 Bigelow Rd,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000196,ClarkstonSchools,,,"Nowik, Brooklynn M.",,,5592 Adderstone Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000197,ClarkstonSchools,,,"Oguin, Braydon T.",,,5007 Rockaway Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000198,ClarkstonSchools,,,"Oliver, Gwenyth G.",,,10109 Wagoner Ci,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000199,ClarkstonSchools,,,"Oliver, Sloane M.",,,10109 Wagoner Ci,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000200,ClarkstonSchools,,,"O'Neil, Baylee M.",,,6729 Belmont Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000201,ClarkstonSchools,,,"Oshust, Brynn R.",,,6951 Hubbard Hills Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000202,ClarkstonSchools,,,"Otto, Kylie L.",,,6837 Woodcrest Ridge,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000203,ClarkstonSchools,,,"Pace, Jackson W.",,,7044 Terrell St,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000204,ClarkstonSchools,,,"Packard, Stella M.",,,6143 Cheshire Park Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000205,ClarkstonSchools,,,"Pagel, Mason L.",,,5897 Clarkston Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000206,ClarkstonSchools,,,"Parker, Ella J.",,,5031 Bordeaux Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000207,ClarkstonSchools,,,"Parker, Reese A.",,,5031 Bordeaux Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000208,ClarkstonSchools,,,"Partchenko, Lily E.",,,9208 Lake Ridge Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000209,ClarkstonSchools,,,"Patel, Eshan P.",,,7955 Bridge Valley,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000210,ClarkstonSchools,,,"Patterson, William J.",,,6335 Waldon Center Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000211,ClarkstonSchools,,,"Payment, Eli L.",,,8282 Foster Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000212,ClarkstonSchools,,,"Pinkerton, Emery J.",,,5757 Everest Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000213,ClarkstonSchools,,,"Place, William M.",,,9495 Whipple Shores Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000214,ClarkstonSchools,,,"Poole, Gabriella R.",,,5375 Stickney Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000215,ClarkstonSchools,,,"Popelier, Madelyn S.",,,6275 Englewood Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000216,ClarkstonSchools,,,"Poterek, Lauren A.",,,8063 Caribou Lake,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000217,ClarkstonSchools,,,"Price-Thomas, Ry'Ley A.",,,2500 Mann Rd #263,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000218,ClarkstonSchools,,,"Pulliam, Rylan E.",,,9971 Forest Ridge,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000219,ClarkstonSchools,,,"Quillen, Jakob E.",,,6225 Cheshire Park Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000220,ClarkstonSchools,,,"Raddatz, Nathan T.",,,6307 Tanglewood Ln,,Grand Blanc,MI,48439,,48439,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000221,ClarkstonSchools,,,"Radke, Ava H.",,,4603 Stone Gate Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000222,ClarkstonSchools,,,"Redker, Elizabeth J.",,,5200 Timber Ridge Tr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000223,ClarkstonSchools,,,"Reyes, Estevan Jr",,,5550 Edgar Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000224,ClarkstonSchools,,,"Reynolds, Braden A.",,,5397 Aberdeen Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000225,ClarkstonSchools,,,"Reynolds, Kalani J.",,,790 Bow Ln,,Waterford,MI,48328,,48328,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000226,ClarkstonSchools,,,"Reynolds, Zachary M.",,,5808 Woodstone Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000227,ClarkstonSchools,,,"Riddle, Kiernan N.",,,5179 Stevens Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000228,ClarkstonSchools,,,"Rinke, Emerson L.",,,5139 Oak Park Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000229,ClarkstonSchools,,,"Robinson, Ava J.",,,7029 Oakhurst Ridge Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000230,ClarkstonSchools,,,"Roemensky, Avery K.",,,8285 Meadow Rdg,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000231,ClarkstonSchools,,,"Rose, Aiden M.",,,835 Hilltop Dr,,White Lake,MI,48386,,48386,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000232,ClarkstonSchools,,,"Ross, Joshua S.",,,8176 Fairfield Ci,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000233,ClarkstonSchools,,,"Russo, Juliana B.",,,6001 S Main St,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000234,ClarkstonSchools,,,"Rykse, Sofia L.",,,5708 Kingfisher Ln,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000235,ClarkstonSchools,,,"Saint Dennis, Taylor J.",,,7417 S Village Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000236,ClarkstonSchools,,,"Sardelli, Emma L.",,,7248 Ardsley Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000237,ClarkstonSchools,,,"Scaglione, Joseph G.",,,7900 S Eston Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000238,ClarkstonSchools,,,"Schaldenbrand, Matthew J.",,,2740 Browning Dr,,Lake Orion,MI,48360,,48360,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000239,ClarkstonSchools,,,"Schatz, Amelia J.",,,9951 King Rd,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000240,ClarkstonSchools,,,"Schmitz, Jacob D.",,,5028 Ashford Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000241,ClarkstonSchools,,,"Schnur, Riley E.",,,6168 Cheshire Park Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000242,ClarkstonSchools,,,"Scott, Brennan A.",,,4386 Bluff Pointe Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000243,ClarkstonSchools,,,"Sexton, Cooper S.",,,4441 Middlesboro Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000244,ClarkstonSchools,,,"Shaw, Maxfield H.",,,7529 Bitterbush,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000245,ClarkstonSchools,,,"Shushtari, Kamyar D.",,,7246 Stonevalley Bluff,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000246,ClarkstonSchools,,,"Shushtari, Kiyan D.",,,7246 Stonevalley Bluff,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000247,ClarkstonSchools,,,"Sinclair, Sean V.",,,7080 Scenic Ridge Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000248,ClarkstonSchools,,,"Sloan, Maxson M.",,,8747 Hunters Creek Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000249,ClarkstonSchools,,,"Smith, Charlotte J.",,,4331 Bluff Pointe Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000250,ClarkstonSchools,,,"Sorensen, Sophie E.",,,8240 Caribou Tr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000251,ClarkstonSchools,,,"Spencer, Aubrey N.",,,7350 Oakstone Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000252,ClarkstonSchools,,,"Spencer, Samantha R.",,,5942 Blackberry Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000253,ClarkstonSchools,,,"Stover, Aiden K.",,,7481 Lake Forest Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000254,ClarkstonSchools,,,"Strate, Carson M.",,,3111 Mann Rd,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000255,ClarkstonSchools,,,"Stubner, Joseph M.",,,7992 Brookwood Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000256,ClarkstonSchools,,,"Stump, Aliyah K.",,,10008 Maple Valley Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000257,ClarkstonSchools,,,"Targal, Lawrence H.",,,5836 Paramus,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000258,ClarkstonSchools,,,"Taylor, Zachary V.",,,6509 Southampton Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000259,ClarkstonSchools,,,"Teelander, Maliya E.",,,4539 Palmetto Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000260,ClarkstonSchools,,,"Tersigni, Ava A.",,,7130 Deer Lake Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000261,ClarkstonSchools,,,"Thalmann, Mollie F.",,,5552 Chestnut Hill Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000262,ClarkstonSchools,,,"Thierry, Aidan A.",,,5830 Morning Dr,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000263,ClarkstonSchools,,,"Thompson, Charles J.",,,7220 Blue Water Dr #138,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000264,ClarkstonSchools,,,"Tippett, Grace F.",,,5095 Paula Ave,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000265,ClarkstonSchools,,,"Truby, Michael T.",,,10330 Whipple Tree Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000266,ClarkstonSchools,,,"Truesdell, Charlotte M.",,,6165 Lake Waldon Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000267,ClarkstonSchools,,,"Tultz, Ethan A.",,,5271 Coulter Lake Bl,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000268,ClarkstonSchools,,,"Tunis, Alexis N.",,,2151 Granger Rd,,Ortonville,MI,48462,,48462,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000269,ClarkstonSchools,,,"Turcsak, Evelyn R.",,,217 Maplewood Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000270,ClarkstonSchools,,,"Upchurch, Sophia A.",,,7889 Pine Ridge Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000271,ClarkstonSchools,,,"Van Goor, Brynn S.",,,4060 Cross Rd,,White Lake,MI,48386,,48386,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000272,ClarkstonSchools,,,"Vang, Charlotte S.",,,8407 Zeerco Bl,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000273,ClarkstonSchools,,,"Vaughn, Benjamin T.",,,4586 Sunflower Ci,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000274,ClarkstonSchools,,,"Ventimiglia, Anthony J.",,,7950 Perry Lake Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000275,ClarkstonSchools,,,"Vitous, Reese H.",,,5629 Skyline Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000276,ClarkstonSchools,,,"Vore, Natalia L.",,,5411 Sashabaw Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000277,ClarkstonSchools,,,"Walker, Alexandra J.",,,11957 Scenic Valley,,Davisburg,MI,48350,,48350,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000278,ClarkstonSchools,,,"Walsh, Justin L.",,,8115 Englewood Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000279,ClarkstonSchools,,,"Wasilk, Ava R.",,,6635 Wellesley Terrace,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000280,ClarkstonSchools,,,"Way, Ruby R.",,,2405 Snellbrook Rd,,Auburn Hills,MI,48326,,48326,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000281,ClarkstonSchools,,,"Webster, Rylee N.",,,5904 Sunridge Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000282,ClarkstonSchools,,,"Weidenbach, Lincoln C.",,,6305 Waldon Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000283,ClarkstonSchools,,,"Wells, Jaylei M.",,,5836 N Marsh Bank Ln #201,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000284,ClarkstonSchools,,,"Westerman, Curtis J.",,,8713 S Shore Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000285,ClarkstonSchools,,,"Wheeler, Caleb B.",,,4751 Summerhill Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000286,ClarkstonSchools,,,"Whiteherse, Brady R.",,,9475 Big Lake Rd,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000287,ClarkstonSchools,,,"Whittaker, Addison C.",,,5010 Timber Ridge Tr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000288,ClarkstonSchools,,,"Whittaker, Emma G.",,,5010 Timber Ridge Tr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000289,ClarkstonSchools,,,"Wills, Andrew R.",,,4580 Oakvista Av,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000290,ClarkstonSchools,,,"Wilson, Jay R.",,,5893 Misty Hill Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000291,ClarkstonSchools,,,"Wilson, Kile R.",,,8231 Brookstone Ln,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000292,ClarkstonSchools,,,"Wisterman, Austin N.",,,6191 Mallard Ct,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000293,ClarkstonSchools,,,"Wolfe, Madisyn J.",,,7700 Parkwood Ct,,Waterford,MI,48329,,48329,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000294,ClarkstonSchools,,,"Wood, Emerson G.",,,5792 Garnet Ci,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000295,ClarkstonSchools,,,"Wood, Ian",,,4813 Eagle Springs Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000296,ClarkstonSchools,,,"Wood, Zachary J.",,,6756 Longhurst Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000297,ClarkstonSchools,,,"Woodward, Kaitlin L.",,,6209 Parkridge Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000298,ClarkstonSchools,,,"Wunsche, Vincent A.",,,6430 Heron Park Wy,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000299,ClarkstonSchools,,,"Wyman, Jordyn M.",,,9514 Cornell Ave,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000300,ClarkstonSchools,,,"Yedlin, Josephine O.",,,6526 Deer Ridge Dr,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000301,ClarkstonSchools,,,"Ykema, Kennedy R.",,,6571 Pine Ridge Ci,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000302,ClarkstonSchools,,,"Zagorski, Kylie T.",,,5146 Lost Hickory Ct,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000303,ClarkstonSchools,,,"Zatell, Alexa S.",,,6609 Loch Moor Ct,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000304,ClarkstonSchools,,,"Zielke, Graham E.",,,4767 Ennismore Dr,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000305,ClarkstonSchools,,,"Ziemann, Crosby T.",,,6926 Tappon Ct,,Clarkston,MI,48346,,48346,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000306,ClarkstonSchools,,,"Ziemba, Kaylin G.",,,7034 Oakhurst Ridge Rd,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True
+3000000307,ClarkstonSchools,,,"Zientek, Jamison C.",,,7614 Devins Ridge,,Clarkston,MI,48348,,48348,,US,ClarkstonSchools.xlsx,FULLNAME,,True

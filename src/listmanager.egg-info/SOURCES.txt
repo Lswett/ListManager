@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/listmanager/__init__.py
+src/listmanager/cli.py
+src/listmanager/gui.py
+src/listmanager.egg-info/PKG-INFO
+src/listmanager.egg-info/SOURCES.txt
+src/listmanager.egg-info/dependency_links.txt
+src/listmanager.egg-info/entry_points.txt
+src/listmanager.egg-info/requires.txt
+src/listmanager.egg-info/top_level.txt
+src/listmanager/core/__init__.py
+src/listmanager/core/dbf_breakdown.py
+src/listmanager/core/io.py
+src/listmanager/core/merge.py
+src/listmanager/core/normalize.py
+src/listmanager/core/validate.py
