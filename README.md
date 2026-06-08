@@ -11,6 +11,7 @@ validating records, analyzing DBF files, and exporting production-ready CSV data
 - Split valid US, international, and error rows into separate output files.
 - Fill or verify US state values from a local offline ZIP lookup.
 - Move unsupported international mail into review output instead of normal output.
+- Convert messy Excel mailing lists into official COMPANY, FULLNAME, or FIRSTLAST workbooks.
 - Analyze `.dbf` files by a selected grouping column.
 - Review DBF validation warnings and hard-stop errors.
 - Create clean and quarantine exports from selected validation rules.
@@ -45,9 +46,10 @@ For an existing venv, reinstall the editable project after dependency changes:
 .\venv\Scripts\python.exe gui.py
 ```
 
-The GUI includes two tabs:
+The GUI includes three tabs:
 
 - `Merge`: choose input/output folders, set the data start row, and run the spreadsheet merge.
+- `Format Checker`: convert messy Excel files into standardized workbooks before merging.
 - `DBF Breakdown`: choose a DBF file, analyze counts by column, create clean lists, and export results.
 
 ## CLI Usage
@@ -60,6 +62,31 @@ Optional flags:
 
 - `--inputdir PATH` defaults to `ListInput`
 - `--start-row N` defaults to `8`
+
+## Format Checker
+
+The Format Checker workflow converts messy `.xlsx` or `.xlsm` mailing-list files
+into standardized ListManager workbooks before they are merged. It writes one
+converted workbook per source file. Each converted workbook contains:
+
+- `COMPANY`, `FULLNAME`, or `FIRSTLAST` as the main clean output sheet
+- `NEEDS_REVIEW` inside the same workbook
+- `CONVERSION_REPORT` inside the same workbook
+
+Rows with warnings can still go to the main sheet. Rows with blocking issues,
+including international mail, missing required fields, invalid ZIPs, ZIPs not
+found in the local lookup, and state/ZIP mismatches, go to `NEEDS_REVIEW`.
+Duplicates are not removed during this stage.
+
+Run from the command line:
+
+```bash
+.\venv\Scripts\python.exe -m listmanager.format_checker.convert examples/messy_inputs examples/converted_outputs
+```
+
+The input argument can be one Excel file or a folder of Excel files. The GUI has
+a separate `Format Checker` tab with scan, convert, results table, and output
+folder controls. The existing `Merge` tab remains for already standardized files.
 
 ## Local ZIP Lookup
 

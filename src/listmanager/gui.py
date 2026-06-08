@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import os
 import queue
 import threading
 import traceback
@@ -20,6 +21,7 @@ from listmanager.core.dbf_breakdown import (
     prepare_clean_export,
 )
 from listmanager.core.merge import merge_files
+from listmanager.format_checker import ConversionResult, convert_many, scan_many
 
 
 class BackgroundTask:
@@ -53,6 +55,11 @@ class MainWindow(tk.Tk):
         self.dbf_clean_records: list[dict[str, object]] | None = None
         self.dbf_quarantine_records: list[dict[str, object]] | None = None
         self.dbf_quarantine_headers: list[str] | None = None
+        self.format_input = tk.StringVar(value="")
+        self.format_output_dir = tk.StringVar(value=str(Path("examples/converted_outputs").resolve()))
+        self.format_status = tk.StringVar(value="Ready.")
+        self.format_inputs: list[Path] = []
+        self.format_results: list[ConversionResult] = []
         self.events: queue.Queue[tuple[str, object]] = queue.Queue()
         self.running_tasks = 0
 
@@ -73,6 +80,7 @@ class MainWindow(tk.Tk):
         tabs = ttk.Notebook(self)
         tabs.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
         tabs.add(self._build_merge_tab(tabs), text="Merge")
+        tabs.add(self._build_format_checker_tab(tabs), text="Format Checker")
         tabs.add(self._build_dbf_tab(tabs), text="DBF Breakdown")
 
     def _build_merge_tab(self, parent: ttk.Notebook) -> ttk.Frame:
@@ -124,6 +132,65 @@ class MainWindow(tk.Tk):
 
         ttk.Label(frame, textvariable=self.status, style="Status.TLabel").grid(
             row=6, column=0, columnspan=3, sticky="ew", pady=(8, 0)
+        )
+        return frame
+
+    def _build_format_checker_tab(self, parent: ttk.Notebook) -> ttk.Frame:
+        frame = ttk.Frame(parent, padding=10)
+        frame.columnconfigure(1, weight=1)
+        frame.rowconfigure(3, weight=1)
+
+        ttk.Label(frame, text="Messy Inputs").grid(row=0, column=0, sticky="w", padx=(0, 8), pady=4)
+        ttk.Entry(frame, textvariable=self.format_input).grid(row=0, column=1, sticky="ew", pady=4)
+        input_actions = ttk.Frame(frame)
+        input_actions.grid(row=0, column=2, sticky="e", padx=(8, 0), pady=4)
+        ttk.Button(input_actions, text="Files...", command=self._select_format_files).pack(side=tk.LEFT)
+        ttk.Button(input_actions, text="Folder...", command=self._select_format_folder).pack(side=tk.LEFT, padx=(6, 0))
+
+        ttk.Label(frame, text="Output Folder").grid(row=1, column=0, sticky="w", padx=(0, 8), pady=4)
+        ttk.Entry(frame, textvariable=self.format_output_dir).grid(row=1, column=1, sticky="ew", pady=4)
+        ttk.Button(frame, text="Browse...", command=self._browse_format_output_dir).grid(
+            row=1, column=2, sticky="e", padx=(8, 0), pady=4
+        )
+
+        actions = ttk.Frame(frame)
+        actions.grid(row=2, column=1, columnspan=2, sticky="ew", pady=(6, 8))
+        self.format_scan_button = ttk.Button(actions, text="Scan", command=self.run_format_scan)
+        self.format_scan_button.pack(side=tk.LEFT)
+        self.format_convert_button = ttk.Button(actions, text="Convert", command=self.run_format_convert)
+        self.format_convert_button.pack(side=tk.LEFT, padx=(8, 0))
+        ttk.Button(actions, text="Open Output Folder", command=self.open_format_output_folder).pack(side=tk.RIGHT)
+
+        columns = ("file", "format", "scanned", "converted", "review", "warnings", "errors", "output")
+        self.format_table = ttk.Treeview(frame, columns=columns, show="headings")
+        headings = {
+            "file": "File",
+            "format": "Detected Format",
+            "scanned": "Rows Scanned",
+            "converted": "Converted Rows",
+            "review": "Needs Review Rows",
+            "warnings": "Warnings",
+            "errors": "Errors",
+            "output": "Output File",
+        }
+        widths = {
+            "file": 190,
+            "format": 120,
+            "scanned": 95,
+            "converted": 105,
+            "review": 120,
+            "warnings": 80,
+            "errors": 70,
+            "output": 210,
+        }
+        for column in columns:
+            self.format_table.heading(column, text=headings[column])
+            anchor = tk.W if column in {"file", "format", "output"} else tk.E
+            self.format_table.column(column, width=widths[column], anchor=anchor)
+        self.format_table.grid(row=3, column=0, columnspan=3, sticky="nsew", pady=4)
+
+        ttk.Label(frame, textvariable=self.format_status, style="Status.TLabel").grid(
+            row=4, column=0, columnspan=3, sticky="ew", pady=(8, 0)
         )
         return frame
 
@@ -197,6 +264,28 @@ class MainWindow(tk.Tk):
         directory = filedialog.askdirectory(title="Select Output Directory", initialdir=self.output_dir.get())
         if directory:
             self.output_dir.set(directory)
+
+    def _select_format_files(self) -> None:
+        file_paths = filedialog.askopenfilenames(
+            title="Select Messy Excel Files",
+            filetypes=[("Excel Files", "*.xlsx *.xlsm"), ("All Files", "*.*")],
+        )
+        if not file_paths:
+            return
+        self.format_inputs = [Path(path) for path in file_paths]
+        self.format_input.set("; ".join(path.name for path in self.format_inputs))
+
+    def _select_format_folder(self) -> None:
+        directory = filedialog.askdirectory(title="Select Messy Input Folder")
+        if not directory:
+            return
+        self.format_inputs = [Path(directory)]
+        self.format_input.set(directory)
+
+    def _browse_format_output_dir(self) -> None:
+        directory = filedialog.askdirectory(title="Select Format Checker Output Folder", initialdir=self.format_output_dir.get())
+        if directory:
+            self.format_output_dir.set(directory)
 
     def _select_dbf_file(self) -> None:
         file_path = filedialog.askopenfilename(
@@ -277,6 +366,45 @@ class MainWindow(tk.Tk):
             on_done=lambda: self.analyze_button.configure(state=tk.NORMAL),
         )
 
+    def _format_input_paths(self) -> list[Path]:
+        if self.format_inputs:
+            return self.format_inputs
+        text = self.format_input.get().strip()
+        return [Path(text)] if text else []
+
+    def run_format_scan(self) -> None:
+        input_paths = self._format_input_paths()
+        if not input_paths:
+            messagebox.showwarning("Format Checker", "Select messy input files or a folder first.")
+            return
+        output_dir = Path(self.format_output_dir.get())
+        self.format_status.set("Scanning...")
+        self.format_scan_button.configure(state=tk.DISABLED)
+
+        self._run_background(
+            lambda: scan_many(input_paths, output_dir),
+            on_success=self._format_scan_succeeded,
+            on_error=lambda text: self._task_error("Format Checker Scan Error", text, self.format_status),
+            on_done=lambda: self.format_scan_button.configure(state=tk.NORMAL),
+        )
+
+    def run_format_convert(self) -> None:
+        input_paths = self._format_input_paths()
+        if not input_paths:
+            messagebox.showwarning("Format Checker", "Select messy input files or a folder first.")
+            return
+        output_dir = Path(self.format_output_dir.get())
+        output_dir.mkdir(parents=True, exist_ok=True)
+        self.format_status.set("Converting...")
+        self.format_convert_button.configure(state=tk.DISABLED)
+
+        self._run_background(
+            lambda: convert_many(input_paths, output_dir),
+            on_success=self._format_convert_succeeded,
+            on_error=lambda text: self._task_error("Format Checker Convert Error", text, self.format_status),
+            on_done=lambda: self.format_convert_button.configure(state=tk.NORMAL),
+        )
+
     def _run_background(self, target, on_success, on_error, on_done) -> None:
         task = BackgroundTask(target, on_success, on_error, on_done)
         self.running_tasks += 1
@@ -336,6 +464,42 @@ class MainWindow(tk.Tk):
             self.dbf_status.set(f"Barcode missing in {len(breakdown.barcode_missing)} row(s).")
         else:
             self.dbf_status.set("Analysis completed.")
+
+    def _format_scan_succeeded(self, results: list[ConversionResult]) -> None:
+        self.format_results = results
+        self._populate_format_results(results)
+        self.format_status.set(f"Scan completed for {len(results)} file(s).")
+
+    def _format_convert_succeeded(self, results: list[ConversionResult]) -> None:
+        self.format_results = results
+        self._populate_format_results(results)
+        converted = sum(1 for result in results if result.output_path)
+        review_rows = sum(result.rows_needing_review for result in results)
+        self.format_status.set(f"Converted {converted} file(s). Needs review rows: {review_rows}.")
+
+    def _populate_format_results(self, results: list[ConversionResult]) -> None:
+        for item in self.format_table.get_children():
+            self.format_table.delete(item)
+        for result in results:
+            self.format_table.insert(
+                "",
+                tk.END,
+                values=(
+                    result.source_path.name,
+                    result.detected_format,
+                    result.rows_scanned,
+                    result.rows_converted,
+                    result.rows_needing_review,
+                    result.warning_count,
+                    result.error_count,
+                    result.output_path.name if result.output_path else "",
+                ),
+            )
+
+    def open_format_output_folder(self) -> None:
+        output_dir = Path(self.format_output_dir.get())
+        output_dir.mkdir(parents=True, exist_ok=True)
+        os.startfile(output_dir)
 
     def _task_error(self, title: str, text: str, status_var: tk.StringVar) -> None:
         status_var.set("Error encountered.")
