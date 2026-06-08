@@ -2,6 +2,8 @@ from __future__ import annotations
 import re
 import pandas as pd
 
+from listmanager.zip_lookup import normalize_zip
+
 def clean_spaces(x: str) -> str:
     if x is None or pd.isna(x):   # <-- handles np.nan
         return ""
@@ -18,9 +20,7 @@ def normalize_country(country: str, us_aliases: list[str]) -> tuple[str, bool]:
     return c, False
 
 def parse_zip5(zip_raw: str) -> str:
-    z = clean_spaces(zip_raw)
-    digits = re.sub(r"\D", "", z)
-    return digits[:5] if len(digits) >= 5 else ""
+    return normalize_zip(clean_spaces(zip_raw))
 
 def canonicalize(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     if df.empty:
@@ -45,6 +45,12 @@ def canonicalize(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     norm = df["Country"].map(lambda v: normalize_country(v, us_aliases))
     df["CountryNorm"] = [t[0] for t in norm]
     df["IsUS"] = [t[1] for t in norm]
+    df["IssueCodes"] = [
+        "COUNTRY_NORMALIZED_US"
+        if clean_spaces(raw) and is_us
+        else ""
+        for raw, is_us in zip(df["Country"], df["IsUS"])
+    ]
 
     # Zip5 extraction
     df["Zip5"] = df["Zip"].map(parse_zip5)

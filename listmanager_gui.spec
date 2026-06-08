@@ -10,6 +10,9 @@ import pathlib
 project_root = pathlib.Path.cwd()
 
 datas: list[tuple[str, str]] = []
+zip_lookup_resource = project_root / "resources" / "zip_lookup" / "us_zip_state_lookup.csv"
+if zip_lookup_resource.exists():
+    datas.append((str(zip_lookup_resource), "resources/zip_lookup"))
 
 a = Analysis(
     ["gui.py"],

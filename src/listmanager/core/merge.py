@@ -21,6 +21,7 @@ def _reorder_for_output(df: pd.DataFrame) -> pd.DataFrame:
         "Zip", "Zip4", "Zip5",
         "Country", "CountryNorm",
         "__SourceFile", "__Sheet",
+        "IssueCodes",
         "ErrorReason"
     ]
     cols = [c for c in priority if c in df.columns]
@@ -92,8 +93,13 @@ def merge_files(files: Iterable[str], outdir: Path, cfg: dict) -> Dict[str, int]
     errors = combined[combined["ErrorReason"].ne("")].copy()
     ok = combined[combined["ErrorReason"].eq("")].copy()
 
-    international = ok[~ok["IsUS"]].copy()
-    merged_us = ok[ok["IsUS"]].copy()
+    international = combined[
+        combined["IssueCodes"].fillna("").astype(str).str.contains("INTERNATIONAL_MAIL_REVIEW_REQUIRED")
+    ].copy()
+    merged_us = ok[
+        ok["IsUS"]
+        & ~ok["IssueCodes"].fillna("").astype(str).str.contains("INTERNATIONAL_MAIL_REVIEW_REQUIRED")
+    ].copy()
 
     # Reorder and sanitize column headers for readability/export constraints
     merged_us = _prepare_for_export(merged_us)

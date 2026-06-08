@@ -1,0 +1,9 @@
+US ZIP lookup build report
+Source directory: resources\zip_lookup\source
+Source files: free-zipcode-database-Primary.csv
+Source names: Archived federalgovernmentzipcodes.us Primary CSV
+Rows written: 42522
+Distinct ZIPs: 42522
+Rows skipped: 0
+ZIPs with city aliases: 0
+ZIPs with multiple states: 0

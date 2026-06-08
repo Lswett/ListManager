@@ -9,6 +9,8 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     "country_us_aliases": [
         "US",
         "USA",
+        "U.S.",
+        "U.S.A.",
         "UNITED STATES",
         "UNITED STATES OF AMERICA",
     ],

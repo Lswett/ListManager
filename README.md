@@ -1,99 +1,110 @@
-# ListManager – Version 1
+# ListManager
 
-A desktop mailing list processing application designed for production mail environments.
+ListManager is a desktop mailing list processing tool for merging spreadsheet inputs,
+validating records, analyzing DBF files, and exporting production-ready CSV datasets.
 
-ListManager ingests CSV/Excel data, applies USPS-style validation logic, analyzes DBF files, and exports production-ready datasets through a GUI-based workflow.
+## Capabilities
 
-Version 1 is fully packaged as a Windows executable and is currently used in a university mailroom environment to support live mailing operations.
+- Merge `.csv`, `.xlsx`, `.xlsm`, and `.xls` input files from a folder.
+- Normalize whitespace, countries, ZIP values, and output headers.
+- Generate deterministic per-row `UniqueFileID` values.
+- Split valid US, international, and error rows into separate output files.
+- Fill or verify US state values from a local offline ZIP lookup.
+- Move unsupported international mail into review output instead of normal output.
+- Analyze `.dbf` files by a selected grouping column.
+- Review DBF validation warnings and hard-stop errors.
+- Create clean and quarantine exports from selected validation rules.
 
----
+## Requirements
 
-## Project Overview
-
-Mail production workflows often involve:
-
-- Merging multiple spreadsheet inputs
-- Cleaning inconsistent column formats
-- Enforcing USPS-related validation rules
-- Reviewing barcode and ZIP issues
-- Separating clean vs quarantine records
-- Producing files ready for mailing systems
-
-ListManager consolidates these steps into a single desktop application.
-
-This project focuses on practical operational reliability, validation transparency, and a clear user workflow for production staff.
-
----
-
-## Key Capabilities
-
-### Merge & Normalize Engine
-
-- Consolidates spreadsheet inputs from a defined folder
-- Trims whitespace and normalizes headers
-- Enforces ≤10-character header constraints
-- Generates sequential Unique IDs
-- Outputs production-ready merged datasets
-
-### Validation System
-
-- Applies USPS-style rule checks (ZIP, barcode presence, DPV-style logic, etc.)
-- Classifies records into:
-  - Hard-stop errors
-  - Review-required warnings
-- Tracks per-record validation reasons
-- Produces auditable summaries
-
-### DBF Breakdown Module
-
-- Ingests `.dbf` files
-- Auto-detects grouping fields (prefers `SCHOOL` when available)
-- Computes record counts and percentages
-- Flags barcode gaps
-- Supports clean vs quarantine export flows
-
-### Clean List Workflow
-
-- Interactive rule selection for quarantine
-- Contextual explanations for validation failures
-- Exports:
-  - Clean production dataset
-  - Quarantine dataset (retains all fields + `ERROR_REASON`)
-- Reassigns sequential Unique IDs for final export
-
-### Desktop UX
-
-- PySide6-based GUI
-- Non-blocking worker threads
-- Integrated log viewer
-- Persistent folder selectors
-- Light/Dark theme toggle (qt-material + PyQtDarkTheme)
-
----
-
-## Real-World Deployment
-
-- Packaged via PyInstaller into a standalone Windows executable
-- Distributed internally for production use
-- Actively used in a university mailroom environment
-- Supports live mailing operations and compliance workflows
-
-This is an operational production tool, not a prototype.
-
----
-
-## Technical Stack
-
-- Python 3.10+
-- PySide6 (Qt for Python)
+- Python 3.10 or newer
 - pandas
 - openpyxl
+- xlrd
 - dbfread
-- qt-material
-- PyQtDarkTheme
-- PyInstaller (Windows executable distribution)
 
-Project structure follows a `src/` layout:
+The GUI uses `tkinter`, which ships with the standard Windows Python installer. It does
+not require PySide6, Qt theme packages, or other GUI binary wheels.
+
+## Installation
+
+```bash
+python -m venv venv
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+For an existing venv, reinstall the editable project after dependency changes:
+
+```bash
+.\venv\Scripts\python.exe -m pip install -e .
+```
+
+## GUI Usage
+
+```bash
+.\venv\Scripts\python.exe gui.py
+```
+
+The GUI includes two tabs:
+
+- `Merge`: choose input/output folders, set the data start row, and run the spreadsheet merge.
+- `DBF Breakdown`: choose a DBF file, analyze counts by column, create clean lists, and export results.
+
+## CLI Usage
+
+```bash
+.\venv\Scripts\python.exe run_merge.py --outdir out
+```
+
+Optional flags:
+
+- `--inputdir PATH` defaults to `ListInput`
+- `--start-row N` defaults to `8`
+
+## Local ZIP Lookup
+
+Runtime ZIP/state checks use `resources/zip_lookup/us_zip_state_lookup.csv`.
+The app does not call USPS, HUD, or any ZIP API while processing lists.
+
+USPS City State Product was checked first because it is the official preferred
+source for city/state/ZIP validation. USPS publishes it through EPF/AIS access;
+the product page describes the data as encrypted and not exportable from the
+viewer, so it is not bundled here. HUD-USPS ZIP Code Crosswalk files are the
+preferred public fallback when you can place source CSVs under
+`resources/zip_lookup/source/`; HUD notes those files exclude PO Box only ZIPs
+and can miss a small number of active ZIP Codes.
+
+The current bundled source is an archived third-party CSV fallback with ZIP,
+city, and state columns. It is not official USPS validation data. Rebuild the
+lookup after replacing or updating source files:
+
+```bash
+.\venv\Scripts\python.exe -m listmanager.zip_lookup.build_zip_lookup
+```
+
+The build writes:
+
+- `resources/zip_lookup/us_zip_state_lookup.csv`
+- `resources/zip_lookup/build_report.txt`
+
+ZIP values are stored as text, so leading zeros such as `06110` are preserved.
+Census ZCTA data should only be used as a last resort because ZCTAs are Census
+geographic approximations, not USPS ZIP validation data.
+
+International mail is intentionally moved to review output with
+`INTERNATIONAL_MAIL_REVIEW_REQUIRED` so it can be handled manually. This
+converter currently supports US mailing formats only.
+
+## Build A Windows Executable
+
+```bash
+.\venv\Scripts\python.exe -m pip install -e .[build]
+.\venv\Scripts\pyinstaller.exe --clean --noconfirm listmanager_gui.spec
+```
+
+The packaged application is written to `dist/ListManager/`.
+
+## Project Layout
 
 ```text
 src/listmanager/
@@ -102,84 +113,9 @@ src/listmanager/
         normalize.py
         validate.py
         dbf_breakdown.py
-    gui.py
     cli.py
+    gui.py
 ```
 
-Core processing logic is separated from the UI layer to maintain modularity and testability.
-
----
-
-## Installation (Development)
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## CLI Usage
-
-```bash
-python -m listmanager.cli --outdir out
-```
-
-Optional flags:
-
-- `--inputdir PATH` (default: `ListInput`)
-- `--start-row N` (default: 8)
-
----
-
-## GUI Usage
-
-```bash
-python -m listmanager.gui
-```
-
-Workflow:
-
-1. Select Input and Output folders
-2. Configure data start row
-3. Run Merge process
-4. Optionally analyze DBF files
-5. Review validation summary
-6. Export clean and quarantine outputs
-
----
-
-## Building the Windows Executable
-
-```bash
-pip install -e .[build]
-pyinstaller --clean --noconfirm listmanager_gui.spec
-```
-
-Distribute the contents of:
-
-```text
-dist/ListManager/
-```
-
-Includes:
-
-- `ListManager.exe`
-- Required Qt plugins
-- Embedded configuration
-
----
-
-## Roadmap
-
-- Expand validation coverage (additional Mail.dat-style rules)
-- Add user profiles for different production workflows
-- Extend analytics for error trend tracking
-- Increase automated test coverage for core validation logic
-
----
-
-## Development Notes
-
-Version 1 was accelerated using AI-assisted scaffolding for repetitive components. Architecture decisions, validation logic, workflow design, packaging, and production deployment were directed and implemented to meet real operational requirements.
-
-The project continues to evolve through iterative refinement based on production use.
+The core processing logic is separate from the GUI so it can be used by both the
+desktop app and command-line entry points.

@@ -1,5 +1,9 @@
 from __future__ import annotations
+import re
 import pandas as pd
+
+from listmanager.zip_lookup import ZIP_LOOKUP_MISSING_MESSAGE, load_zip_lookup
+from listmanager.zip_lookup.build_zip_lookup import STATE_CODES
 
 # Output columns used by this module:
 # - __Sheet, __SourceFile, UniqueFileID, School
@@ -10,6 +14,53 @@ import pandas as pd
 
 def _has_any_text(s: pd.Series) -> pd.Series:
     return s.fillna("").astype(str).str.strip().ne("")
+
+INTERNATIONAL_MAIL_MESSAGE = (
+    "International mail detected. Review manually before processing because this "
+    "converter currently supports US mailing formats only."
+)
+
+_COUNTRY_US_VALUES = {"", "US", "USA", "U.S.", "U.S.A.", "UNITED STATES", "UNITED STATES OF AMERICA"}
+_INTERNATIONAL_COUNTRIES = {
+    "CANADA", "CA", "MEXICO", "MX", "UNITED KINGDOM", "UK", "ENGLAND", "FRANCE",
+    "GERMANY", "CHINA", "INDIA", "JAPAN", "AUSTRALIA", "ITALY", "SPAIN",
+}
+_CANADIAN_POSTAL_RE = re.compile(r"^[A-Z]\d[A-Z][ -]?\d[A-Z]\d$", re.IGNORECASE)
+
+
+def _append_text(existing: str, value: str) -> str:
+    if not existing:
+        return value
+    if value in [part.strip() for part in existing.split("|")]:
+        return existing
+    return f"{existing} | {value}"
+
+
+def _normalize_state(value: object) -> str:
+    return "" if value is None else str(value).strip().upper()
+
+
+def _country_text(value: object) -> str:
+    return "" if value is None else str(value).strip().upper()
+
+
+def _looks_international(row: pd.Series, zip_found: bool) -> bool:
+    country = _country_text(row.get("CountryNorm", row.get("Country", "")))
+    raw_country = _country_text(row.get("Country", ""))
+    postal = "" if row.get("Zip") is None else str(row.get("Zip")).strip()
+    state = _normalize_state(row.get("State", ""))
+
+    if country and country not in _COUNTRY_US_VALUES:
+        return True
+    if raw_country in _INTERNATIONAL_COUNTRIES and raw_country not in _COUNTRY_US_VALUES:
+        return True
+    if _CANADIAN_POSTAL_RE.match(postal):
+        return True
+    if raw_country == "" and not zip_found and state and state not in STATE_CODES:
+        return True
+    if country == "US" and raw_country == "" and not zip_found and re.search(r"[A-Za-z]", postal):
+        return True
+    return False
 
 def compute_identity_error(df: pd.DataFrame) -> pd.Series:
     """
@@ -95,11 +146,51 @@ def validate_rows(df: pd.DataFrame) -> pd.DataFrame:
         df["ErrorReason"] = ""
         return df
 
-    # Ensure column exists
+    # Ensure columns exist
     if "ErrorReason" not in df.columns:
         df["ErrorReason"] = ""
+    if "IssueCodes" not in df.columns:
+        df["IssueCodes"] = ""
 
-    # Required address fields
+    try:
+        zip_lookup = load_zip_lookup()
+    except FileNotFoundError as exc:
+        df["IssueCodes"] = df["IssueCodes"].map(lambda value: _append_text(str(value), "ZIP_LOOKUP_FILE_MISSING"))
+        df["ErrorReason"] = ZIP_LOOKUP_MISSING_MESSAGE
+        raise FileNotFoundError(ZIP_LOOKUP_MISSING_MESSAGE) from exc
+
+    expected_states = []
+    zip_found_values = []
+    for zip5 in df["Zip5"]:
+        states = zip_lookup.states_by_zip.get(str(zip5), frozenset()) if zip5 else frozenset()
+        zip_found_values.append(bool(states))
+        expected_states.append(next(iter(states)) if len(states) == 1 else "")
+    df["_ExpectedZipState"] = expected_states
+    df["_ZipFound"] = zip_found_values
+
+    international = df.apply(lambda row: _looks_international(row, bool(row["_ZipFound"])), axis=1)
+
+    fill_state = (
+        ~international
+        & df["State"].astype(str).str.strip().eq("")
+        & df["_ExpectedZipState"].astype(str).str.strip().ne("")
+    )
+    df.loc[fill_state, "State"] = df.loc[fill_state, "_ExpectedZipState"]
+    df.loc[fill_state, "IssueCodes"] = df.loc[fill_state, "IssueCodes"].map(
+        lambda value: _append_text(str(value), "STATE_FILLED_FROM_ZIP")
+    )
+
+    state_present = df["State"].astype(str).str.strip().ne("")
+    state_mismatch = (
+        ~international
+        & state_present
+        & df["_ExpectedZipState"].astype(str).str.strip().ne("")
+        & (df["State"].map(_normalize_state) != df["_ExpectedZipState"])
+    )
+    zip_invalid = ~international & df["Zip5"].astype(str).str.strip().eq("")
+    zip_not_found = ~international & ~zip_invalid & ~df["_ZipFound"].fillna(False)
+
+    # Required address fields after any state fill.
     missing_addr = (
         df["PrimaryAddress"].astype(str).str.strip().eq("") |
         df["City"].astype(str).str.strip().eq("") |
@@ -109,12 +200,6 @@ def validate_rows(df: pd.DataFrame) -> pd.DataFrame:
 
     # Identity errors
     id_err = compute_identity_error(df)
-
-    # US ZIP requirement
-    bad_us_zip = df["IsUS"].fillna(False) & df["Zip5"].astype(str).str.strip().eq("")
-
-    # Intl must provide Country explicitly
-    intl_missing_country = (~df["IsUS"].fillna(True)) & df["Country"].astype(str).str.strip().eq("")
 
     # Build reasons (accumulate)
     df["ErrorReason"] = ""
@@ -128,7 +213,18 @@ def validate_rows(df: pd.DataFrame) -> pd.DataFrame:
 
     add_reason(missing_addr, "Missing address field(s) (PrimaryAddress/City/State/Zip)")
     add_reason(id_err, "Invalid recipient identity (wrong tab or mixed fields)")
-    add_reason(bad_us_zip, "Invalid US ZIP (needs 5 digits)")
-    add_reason(intl_missing_country, "International address missing Country")
+    add_reason(zip_invalid, "ZIP_INVALID")
+    add_reason(zip_not_found, "ZIP_NOT_FOUND")
+    add_reason(state_mismatch, "STATE_ZIP_MISMATCH")
+    add_reason(international, INTERNATIONAL_MAIL_MESSAGE)
 
-    return df
+    issue_masks = [
+        (zip_invalid, "ZIP_INVALID"),
+        (zip_not_found, "ZIP_NOT_FOUND"),
+        (state_mismatch, "STATE_ZIP_MISMATCH"),
+        (international, "INTERNATIONAL_MAIL_REVIEW_REQUIRED"),
+    ]
+    for mask, code in issue_masks:
+        df.loc[mask, "IssueCodes"] = df.loc[mask, "IssueCodes"].map(lambda value, c=code: _append_text(str(value), c))
+
+    return df.drop(columns=["_ExpectedZipState", "_ZipFound"], errors="ignore")

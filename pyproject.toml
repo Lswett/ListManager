@@ -9,13 +9,14 @@ description = "Tools to merge and validate mailing list spreadsheets."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "pandas>=2.0",
+    "pandas>=2.2.3",
     "openpyxl>=3.1",
-    "PySide6>=6.6",
     "dbfread>=2.0",
-    "qt-material>=2.14",
-    "pyqtdarktheme>=1.4",
+    "xlrd>=2.0",
 ]
+
+[tool.setuptools.package-data]
+listmanager = ["zip_lookup/README.md"]
 
 [project.optional-dependencies]
 build = ["pyinstaller>=6.3"]
