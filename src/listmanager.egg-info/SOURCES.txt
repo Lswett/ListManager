@@ -2,6 +2,7 @@ README.md
 pyproject.toml
 src/listmanager/__init__.py
 src/listmanager/cli.py
+src/listmanager/config.py
 src/listmanager/gui.py
 src/listmanager.egg-info/PKG-INFO
 src/listmanager.egg-info/SOURCES.txt

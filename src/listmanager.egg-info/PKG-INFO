@@ -4,59 +4,95 @@ Version: 0.1.0
 Summary: Tools to merge and validate mailing list spreadsheets.
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
-Requires-Dist: pandas>=2.0
+Requires-Dist: pandas>=2.2.3
 Requires-Dist: openpyxl>=3.1
-Requires-Dist: PySide6>=6.6
 Requires-Dist: dbfread>=2.0
-Requires-Dist: qt-material>=2.14
-Requires-Dist: pyqtdarktheme>=1.4
+Requires-Dist: xlrd>=2.0
 Provides-Extra: build
 Requires-Dist: pyinstaller>=6.3; extra == "build"
 
 # ListManager
 
+ListManager is a desktop mailing list processing tool for merging spreadsheet inputs,
+validating records, analyzing DBF files, and exporting production-ready CSV datasets.
+
+## Capabilities
+
+- Merge `.csv`, `.xlsx`, `.xlsm`, and `.xls` input files from a folder.
+- Normalize whitespace, countries, ZIP values, and output headers.
+- Generate deterministic per-row `UniqueFileID` values.
+- Split valid US, international, and error rows into separate output files.
+- Analyze `.dbf` files by a selected grouping column.
+- Review DBF validation warnings and hard-stop errors.
+- Create clean and quarantine exports from selected validation rules.
+
+## Requirements
+
+- Python 3.10 or newer
+- pandas
+- openpyxl
+- xlrd
+- dbfread
+
+The GUI uses `tkinter`, which ships with the standard Windows Python installer. It does
+not require PySide6, Qt theme packages, or other GUI binary wheels.
+
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+python -m venv venv
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-This installs the project in editable mode from the `src/` layout along with the required dependencies.
+For an existing venv, reinstall the editable project after dependency changes:
 
-## CLI Usage
-
+```bash
+.\venv\Scripts\python.exe -m pip install -e .
 ```
-python -m listmanager.cli --outdir out
-```
-
-Optional flags:
-- `--inputdir PATH` (default `ListInput`)
-- `--start-row N` (default `8`)
 
 ## GUI Usage
 
-1. Install dependencies listed above.
-2. Run `python -m listmanager.gui` (or `python gui.py` for the compatibility wrapper).
-3. Choose the input and output directories, set the **Data Start Row** value, then select **Run Merge**.
-4. Use **Settings -> Theme** to switch between the qt-material light look or the PyQtDarkTheme-powered dark mode.
+```bash
+.\venv\Scripts\python.exe gui.py
+```
 
-The GUI lists all supported `.csv/.xlsx/.xlsm/.xls` files it will process, streams log output while merging, and uses the built-in configuration (only the **Data Start Row** is user-adjustable).
+The GUI includes two tabs:
 
-### DBF Column Breakdown (GUI)
+- `Merge`: choose input/output folders, set the data start row, and run the spreadsheet merge.
+- `DBF Breakdown`: choose a DBF file, analyze counts by column, create clean lists, and export results.
 
-The GUI now includes a **DBF Breakdown** tab:
+## CLI Usage
 
-- Pick a `.dbf` file via **Select DBF File...**
-- Select which column to analyze/split by (auto-defaulting to `SCHOOL`) and click **Analyze** to compute counts, view validation summaries (hard-stop vs review rules), and see barcode warnings.
-- Click **Export Lists** to save the current dataset even if warnings or errors are present, or choose **Create Clean List** to review every rule (with descriptions/row numbers) and quarantine selected ones. After creating a clean list, use **Export Clean List** and **Export Quarantined Rows** to write per-column CSVs (quarantined rows carry `ERROR_REASON` notes). Review-only warnings appear in a yellow banner but do not block export.
-- Use **Clear Log** on the Merge tab to reset logs; use the DBF tab status and validation summary to monitor progress.
+```bash
+.\venv\Scripts\python.exe run_merge.py --outdir out
+```
 
-## Build a Windows Executable
+Optional flags:
 
-This repository ships with a PyInstaller spec (`listmanager_gui.spec`) tailored for the GUI wrapper (`gui.py`). To produce a standalone build:
+- `--inputdir PATH` defaults to `ListInput`
+- `--start-row N` defaults to `8`
 
-1. Install the build extra: `pip install -e .[build]`
-2. From the project root, run: `pyinstaller --clean --noconfirm listmanager_gui.spec`
-3. The packaged app lives in `dist/ListManager/` with `ListManager.exe` as the entry point. Distribute the entire folder so the bundled Qt plugins and resources remain alongside the executable.
+## Build A Windows Executable
 
-The spec bundles everything the GUI needs (Qt plugins, resources, and your code). Update the `datas` list inside the spec if you need to ship additional assets.
+```bash
+.\venv\Scripts\python.exe -m pip install -e .[build]
+.\venv\Scripts\pyinstaller.exe --clean --noconfirm listmanager_gui.spec
+```
+
+The packaged application is written to `dist/ListManager/`.
+
+## Project Layout
+
+```text
+src/listmanager/
+    core/
+        merge.py
+        normalize.py
+        validate.py
+        dbf_breakdown.py
+    cli.py
+    gui.py
+```
+
+The core processing logic is separate from the GUI so it can be used by both the
+desktop app and command-line entry points.
