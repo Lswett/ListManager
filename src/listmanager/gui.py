@@ -21,7 +21,9 @@ from listmanager.core.dbf_breakdown import (
     prepare_clean_export,
 )
 from listmanager.core.merge import merge_files
+from listmanager.dedupe import DedupeOptions, DedupeResult, remove_duplicates
 from listmanager.format_checker import ConversionResult, convert_many, scan_many
+from listmanager.template_export import TemplateExportResult, export_to_template
 
 
 class BackgroundTask:
@@ -60,6 +62,15 @@ class MainWindow(tk.Tk):
         self.format_status = tk.StringVar(value="Ready.")
         self.format_inputs: list[Path] = []
         self.format_results: list[ConversionResult] = []
+        self.template_converted_workbook = tk.StringVar(value="")
+        self.template_workbook = tk.StringVar(value="")
+        self.template_output = tk.StringVar(value="")
+        self.template_status = tk.StringVar(value="Ready.")
+        self.dedupe_input = tk.StringVar(value="")
+        self.dedupe_output_dir = tk.StringVar(value="")
+        self.dedupe_auto_remove_exact = tk.BooleanVar(value=True)
+        self.dedupe_create_review = tk.BooleanVar(value=True)
+        self.dedupe_status = tk.StringVar(value="Ready.")
         self.events: queue.Queue[tuple[str, object]] = queue.Queue()
         self.running_tasks = 0
 
@@ -79,8 +90,10 @@ class MainWindow(tk.Tk):
     def _build_ui(self) -> None:
         tabs = ttk.Notebook(self)
         tabs.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
-        tabs.add(self._build_merge_tab(tabs), text="Merge")
         tabs.add(self._build_format_checker_tab(tabs), text="Format Checker")
+        tabs.add(self._build_template_export_tab(tabs), text="Export to Mailing Template")
+        tabs.add(self._build_merge_tab(tabs), text="Merge")
+        tabs.add(self._build_dedupe_tab(tabs), text="Remove Duplicates")
         tabs.add(self._build_dbf_tab(tabs), text="DBF Breakdown")
 
     def _build_merge_tab(self, parent: ttk.Notebook) -> ttk.Frame:
@@ -132,6 +145,114 @@ class MainWindow(tk.Tk):
 
         ttk.Label(frame, textvariable=self.status, style="Status.TLabel").grid(
             row=6, column=0, columnspan=3, sticky="ew", pady=(8, 0)
+        )
+        return frame
+
+    def _build_template_export_tab(self, parent: ttk.Notebook) -> ttk.Frame:
+        frame = ttk.Frame(parent, padding=10)
+        frame.columnconfigure(1, weight=1)
+
+        ttk.Label(frame, text="Converted Workbook").grid(row=0, column=0, sticky="w", padx=(0, 8), pady=4)
+        ttk.Entry(frame, textvariable=self.template_converted_workbook).grid(row=0, column=1, sticky="ew", pady=4)
+        ttk.Button(frame, text="Browse...", command=self._browse_template_converted_workbook).grid(
+            row=0, column=2, sticky="e", padx=(8, 0), pady=4
+        )
+
+        ttk.Label(frame, text="Template Workbook").grid(row=1, column=0, sticky="w", padx=(0, 8), pady=4)
+        ttk.Entry(frame, textvariable=self.template_workbook).grid(row=1, column=1, sticky="ew", pady=4)
+        ttk.Button(frame, text="Browse...", command=self._browse_template_workbook).grid(
+            row=1, column=2, sticky="e", padx=(8, 0), pady=4
+        )
+
+        ttk.Label(frame, text="Save Template-Ready Workbook As").grid(row=2, column=0, sticky="w", padx=(0, 8), pady=4)
+        ttk.Entry(frame, textvariable=self.template_output).grid(row=2, column=1, sticky="ew", pady=4)
+        ttk.Button(frame, text="Save As...", command=self._browse_template_output).grid(
+            row=2, column=2, sticky="e", padx=(8, 0), pady=4
+        )
+
+        actions = ttk.Frame(frame)
+        actions.grid(row=3, column=1, columnspan=2, sticky="ew", pady=(8, 8))
+        self.template_export_button = ttk.Button(actions, text="Export to Template", command=self.run_template_export)
+        self.template_export_button.pack(side=tk.LEFT)
+
+        ttk.Label(
+            frame,
+            text=(
+                "Use this after Format Checker creates a converted workbook. "
+                "Only the passed records sheet is copied into the matching template tab starting on row 8."
+            ),
+            wraplength=720,
+        ).grid(row=4, column=0, columnspan=3, sticky="ew", pady=(8, 0))
+
+        ttk.Label(frame, textvariable=self.template_status, style="Status.TLabel").grid(
+            row=5, column=0, columnspan=3, sticky="ew", pady=(8, 0)
+        )
+        return frame
+
+    def _build_dedupe_tab(self, parent: ttk.Notebook) -> ttk.Frame:
+        frame = ttk.Frame(parent, padding=10)
+        frame.columnconfigure(1, weight=1)
+        frame.rowconfigure(7, weight=1)
+
+        ttk.Label(frame, text="Template-Format Workbook").grid(row=0, column=0, sticky="w", padx=(0, 8), pady=4)
+        ttk.Entry(frame, textvariable=self.dedupe_input).grid(row=0, column=1, sticky="ew", pady=4)
+        ttk.Button(frame, text="Browse...", command=self._browse_dedupe_input).grid(
+            row=0, column=2, sticky="e", padx=(8, 0), pady=4
+        )
+
+        ttk.Label(frame, text="Output Folder").grid(row=1, column=0, sticky="w", padx=(0, 8), pady=4)
+        ttk.Entry(frame, textvariable=self.dedupe_output_dir).grid(row=1, column=1, sticky="ew", pady=4)
+        ttk.Button(frame, text="Browse...", command=self._browse_dedupe_output_dir).grid(
+            row=1, column=2, sticky="e", padx=(8, 0), pady=4
+        )
+
+        ttk.Label(
+            frame,
+            text=(
+                "Use this after the list has been cleaned, merged, and finalized into the template format. "
+                "Exact individual duplicates are removed automatically, possible household/address duplicates "
+                "are written for review, and the original workbook is not changed."
+            ),
+            wraplength=760,
+        ).grid(row=2, column=0, columnspan=3, sticky="ew", pady=(8, 4))
+
+        options = ttk.LabelFrame(frame, text="Options", padding=10)
+        options.grid(row=3, column=0, columnspan=3, sticky="ew", pady=(8, 4))
+        ttk.Checkbutton(
+            options,
+            text="Auto-remove exact individual duplicates",
+            variable=self.dedupe_auto_remove_exact,
+        ).pack(anchor="w")
+        ttk.Checkbutton(
+            options,
+            text="Create possible duplicates review file",
+            variable=self.dedupe_create_review,
+        ).pack(anchor="w", pady=(4, 0))
+
+        later = ttk.LabelFrame(frame, text="Coming later", padding=10)
+        later.grid(row=4, column=0, columnspan=3, sticky="ew", pady=(8, 4))
+        for label in ("Review duplicates before removing", "Remove possible duplicates automatically", "Post-NCOA dedupe"):
+            ttk.Checkbutton(later, text=label, state=tk.DISABLED).pack(anchor="w")
+
+        actions = ttk.Frame(frame)
+        actions.grid(row=5, column=1, columnspan=2, sticky="ew", pady=(8, 8))
+        self.dedupe_run_button = ttk.Button(actions, text="Run Remove Duplicates", command=self.run_dedupe)
+        self.dedupe_run_button.pack(side=tk.LEFT)
+
+        ttk.Label(frame, text="Result Summary").grid(row=6, column=0, sticky="nw", padx=(0, 8), pady=4)
+        summary_frame = ttk.Frame(frame)
+        summary_frame.grid(row=6, column=1, columnspan=2, sticky="nsew", pady=4)
+        summary_frame.columnconfigure(0, weight=1)
+        summary_frame.rowconfigure(0, weight=1)
+        self.dedupe_summary = tk.Text(summary_frame, wrap=tk.WORD, height=10, state=tk.DISABLED)
+        self.dedupe_summary.grid(row=0, column=0, sticky="nsew")
+        summary_scroll = ttk.Scrollbar(summary_frame, orient=tk.VERTICAL, command=self.dedupe_summary.yview)
+        summary_scroll.grid(row=0, column=1, sticky="ns")
+        self.dedupe_summary.configure(yscrollcommand=summary_scroll.set)
+        self._set_text(self.dedupe_summary, "Run Remove Duplicates to see output paths and counts.")
+
+        ttk.Label(frame, textvariable=self.dedupe_status, style="Status.TLabel").grid(
+            row=8, column=0, columnspan=3, sticky="ew", pady=(8, 0)
         )
         return frame
 
@@ -287,6 +408,68 @@ class MainWindow(tk.Tk):
         if directory:
             self.format_output_dir.set(directory)
 
+    def _suggest_template_output_path(self, converted_path: Path) -> Path:
+        stem = converted_path.stem
+        if stem.lower().endswith("_converted"):
+            stem = stem[:-10]
+        return converted_path.with_name(f"{stem}_template_ready.xlsx")
+
+    def _browse_template_converted_workbook(self) -> None:
+        file_path = filedialog.askopenfilename(
+            title="Select Converted Workbook",
+            filetypes=[("Excel Workbooks", "*.xlsx"), ("All Files", "*.*")],
+        )
+        if not file_path:
+            return
+        converted_path = Path(file_path)
+        self.template_converted_workbook.set(str(converted_path))
+        if not self.template_output.get().strip():
+            self.template_output.set(str(self._suggest_template_output_path(converted_path)))
+
+    def _browse_template_workbook(self) -> None:
+        file_path = filedialog.askopenfilename(
+            title="Select Mailing List Template Workbook",
+            filetypes=[("Excel Workbooks", "*.xlsx"), ("All Files", "*.*")],
+        )
+        if file_path:
+            self.template_workbook.set(file_path)
+
+    def _browse_template_output(self) -> None:
+        converted_text = self.template_converted_workbook.get().strip()
+        initialfile = "template_ready.xlsx"
+        initialdir = str(Path.cwd())
+        if converted_text:
+            suggested = self._suggest_template_output_path(Path(converted_text))
+            initialfile = suggested.name
+            initialdir = str(suggested.parent)
+        file_path = filedialog.asksaveasfilename(
+            title="Save Template-Ready Workbook As",
+            initialdir=initialdir,
+            initialfile=initialfile,
+            defaultextension=".xlsx",
+            filetypes=[("Excel Workbooks", "*.xlsx"), ("All Files", "*.*")],
+        )
+        if file_path:
+            self.template_output.set(file_path)
+
+    def _browse_dedupe_input(self) -> None:
+        file_path = filedialog.askopenfilename(
+            title="Select Template-Format Workbook",
+            filetypes=[("Excel Workbooks", "*.xlsx"), ("All Files", "*.*")],
+        )
+        if not file_path:
+            return
+        input_path = Path(file_path)
+        self.dedupe_input.set(str(input_path))
+        if not self.dedupe_output_dir.get().strip():
+            self.dedupe_output_dir.set(str(input_path.with_name(f"{input_path.stem}_dedupe")))
+
+    def _browse_dedupe_output_dir(self) -> None:
+        initialdir = self.dedupe_output_dir.get().strip() or str(Path.cwd())
+        directory = filedialog.askdirectory(title="Select Remove Duplicates Output Folder", initialdir=initialdir)
+        if directory:
+            self.dedupe_output_dir.set(directory)
+
     def _select_dbf_file(self) -> None:
         file_path = filedialog.askopenfilename(
             title="Select DBF File",
@@ -405,6 +588,54 @@ class MainWindow(tk.Tk):
             on_done=lambda: self.format_convert_button.configure(state=tk.NORMAL),
         )
 
+    def run_template_export(self) -> None:
+        converted_path = self.template_converted_workbook.get().strip()
+        template_path = self.template_workbook.get().strip()
+        output_path = self.template_output.get().strip()
+
+        if not converted_path:
+            messagebox.showerror("Export to Mailing Template", "Please select a converted workbook.")
+            return
+        if not template_path:
+            messagebox.showerror("Export to Mailing Template", "Please select the mailing list template workbook.")
+            return
+        if not output_path:
+            messagebox.showerror("Export to Mailing Template", "Please choose where to save the template-ready workbook.")
+            return
+
+        self.template_status.set("Exporting...")
+        self.template_export_button.configure(state=tk.DISABLED)
+        self._run_background(
+            lambda: export_to_template(Path(converted_path), Path(template_path), Path(output_path)),
+            on_success=self._template_export_succeeded,
+            on_error=lambda text: self._task_error("Template Export Error", text, self.template_status),
+            on_done=lambda: self.template_export_button.configure(state=tk.NORMAL),
+        )
+
+    def run_dedupe(self) -> None:
+        input_path = self.dedupe_input.get().strip()
+        output_dir = self.dedupe_output_dir.get().strip()
+
+        if not input_path:
+            messagebox.showerror("Remove Duplicates", "Please select a cleaned/merged template-format workbook.")
+            return
+        if not output_dir:
+            messagebox.showerror("Remove Duplicates", "Please choose an output folder.")
+            return
+
+        options = DedupeOptions(
+            auto_remove_exact_individuals=self.dedupe_auto_remove_exact.get(),
+            create_possible_review=self.dedupe_create_review.get(),
+        )
+        self.dedupe_status.set("Removing duplicates...")
+        self.dedupe_run_button.configure(state=tk.DISABLED)
+        self._run_background(
+            lambda: remove_duplicates(Path(input_path), Path(output_dir), options),
+            on_success=self._dedupe_succeeded,
+            on_error=lambda text: self._task_error("Remove Duplicates Error", text, self.dedupe_status),
+            on_done=lambda: self.dedupe_run_button.configure(state=tk.NORMAL),
+        )
+
     def _run_background(self, target, on_success, on_error, on_done) -> None:
         task = BackgroundTask(target, on_success, on_error, on_done)
         self.running_tasks += 1
@@ -500,6 +731,33 @@ class MainWindow(tk.Tk):
         output_dir = Path(self.format_output_dir.get())
         output_dir.mkdir(parents=True, exist_ok=True)
         os.startfile(output_dir)
+
+    def _template_export_succeeded(self, result: TemplateExportResult) -> None:
+        self.template_status.set(f"Template-ready workbook created: {result.output_path}")
+        messagebox.showinfo(
+            "Export to Mailing Template",
+            f"Template-ready workbook created successfully.\n\n{result.output_path}",
+        )
+
+    def _dedupe_succeeded(self, result: DedupeResult) -> None:
+        summary = "\n".join(
+            [
+                f"Input records: {result.input_records}",
+                f"Output records: {result.output_records}",
+                f"Removed exact duplicates: {result.removed_duplicates}",
+                f"Possible duplicate groups: {result.possible_duplicate_groups}",
+                f"Possible duplicate records: {result.possible_duplicate_records}",
+                "",
+                "Output files:",
+                f"Deduped output: {result.deduped_output_path}",
+                f"Removed duplicates: {result.removed_duplicates_path}",
+                f"Possible duplicates review: {result.possible_duplicates_path}",
+                f"Duplicate report: {result.report_path}",
+            ]
+        )
+        self._set_text(self.dedupe_summary, summary)
+        self.dedupe_status.set(f"Remove Duplicates completed: {result.output_dir}")
+        messagebox.showinfo("Remove Duplicates", summary)
 
     def _task_error(self, title: str, text: str, status_var: tk.StringVar) -> None:
         status_var.set("Error encountered.")

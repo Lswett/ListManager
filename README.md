@@ -88,6 +88,31 @@ The input argument can be one Excel file or a folder of Excel files. The GUI has
 a separate `Format Checker` tab with scan, convert, results table, and output
 folder controls. The existing `Merge` tab remains for already standardized files.
 
+## Template Export
+
+After a workbook has been converted and reviewed, export its passed records into
+the official mailing list template:
+
+```bash
+.\venv\Scripts\python.exe -m listmanager.template_export input_converted.xlsx MailingListTemplate.xlsx output_template_ready.xlsx
+```
+
+The exporter reads only the passed-records sheet from the converted workbook:
+`COMPANY`, `FULLNAME`, or `FIRSTLAST`. It writes those rows into the matching
+template tab, starting at row 8. Template rows 1-7, row 4 headers, instructions,
+examples, formatting, tab names, and other tabs are preserved. `NEEDS_REVIEW`
+and `CONVERSION_REPORT` are intentionally excluded.
+
+The same workflow is available in the GUI under `Export to Mailing Template`:
+
+1. Run the normal Format Checker conversion/validation process.
+2. Review the converted workbook if needed.
+3. Open `Export to Mailing Template`.
+4. Select the converted workbook.
+5. Select `MailingListTemplate.xlsx`.
+6. Choose where to save the template-ready workbook.
+7. Click `Export to Template`.
+
 ## Local ZIP Lookup
 
 Runtime ZIP/state checks use `resources/zip_lookup/us_zip_state_lookup.csv`.

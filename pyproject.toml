@@ -25,6 +25,7 @@ build = ["pyinstaller>=6.3"]
 listmanager-cli = "listmanager.cli:main"
 listmanager-gui = "listmanager.gui:main"
 listmanager-convert = "listmanager.format_checker.convert:main"
+listmanager-template-export = "listmanager.template_export:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
