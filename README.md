@@ -1,173 +1,368 @@
 # ListManager
 
-ListManager is a desktop mailing list processing tool for merging spreadsheet inputs,
-validating records, analyzing DBF files, and exporting production-ready CSV datasets.
+Desktop mailing-list processing tool for merging spreadsheet inputs, validating records, analyzing DBF files, and exporting production-ready datasets.
+
+ListManager was built as a companion tool for coworkers at my workplace who need to use mailing/presort software they aren't fluent in. It packages the tedious, error-prone parts of list preparation, including merging, normalization, ZIP/state validation, and template formatting, behind a GUI that a non-technical user can run confidently.
+
+The goal is for users to understand the basic principles of the workflow without needing to understand every technical step involved in preparing a mailing list.
+
+A CLI sits underneath the same core logic for repeatable, scripted runs.
+
+> **Status:** Actively developed; in production use.
+
+## Typical Workflow
+
+1. **Format Checker** converts messy `.xlsx`/`.xlsm` files into standardized workbooks containing:
+
+   * Valid rows
+   * `NEEDS_REVIEW`
+   * `CONVERSION_REPORT`
+2. Review flagged rows, including:
+
+   * International mail
+   * Missing fields
+   * Invalid ZIPs
+   * State/ZIP mismatches
+3. **Export to Mailing Template** writes passed records into the official template.
+4. Alternatively, run **Merge** directly on already-standardized files.
 
 ## Capabilities
 
-- Merge `.csv`, `.xlsx`, `.xlsm`, and `.xls` input files from a folder.
-- Normalize whitespace, countries, ZIP values, and output headers.
-- Generate deterministic per-row `UniqueFileID` values.
-- Split valid US, international, and error rows into separate output files.
-- Fill or verify US state values from a local offline ZIP lookup.
-- Move unsupported international mail into review output instead of normal output.
-- Convert messy Excel mailing lists into official COMPANY, FULLNAME, or FIRSTLAST workbooks.
-- Analyze `.dbf` files by a selected grouping column.
-- Review DBF validation warnings and hard-stop errors.
-- Create clean and quarantine exports from selected validation rules.
+* Merge `.csv`, `.xlsx`, `.xlsm`, and `.xls` input files from a folder
+* Normalize whitespace, countries, ZIP values, and output headers
+* Generate deterministic per-row `UniqueFileID` values
+* Split valid US, international, and error rows into separate output files
+* Fill or verify US state values using a local offline ZIP lookup
+* Perform ZIP/state validation without API calls at runtime
+* Route international mail into a review output instead of normal output
+* Convert messy Excel mailing lists into standardized `COMPANY` / `FULLNAME` / `FIRSTLAST` workbooks
+* Analyze `.dbf` files by a selected grouping column
+* Review DBF validation warnings and hard-stop errors
+* Create clean and quarantine exports from DBF data
 
 ## Requirements
 
-- Python 3.10 or newer
-- pandas
-- openpyxl
-- xlrd
-- dbfread
+* Python 3.10+
+* `pandas`
+* `openpyxl`
+* `xlrd`
+* `dbfread`
+* Tkinter
 
-The GUI uses `tkinter`, which ships with the standard Windows Python installer. It does
-not require PySide6, Qt theme packages, or other GUI binary wheels.
+Tkinter ships with the standard Windows Python installer, so no Qt/PySide6 binary wheels are required.
 
 ## Installation
 
-```bash
+Create a virtual environment and install the project dependencies:
+
+```powershell
 python -m venv venv
 .\venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-For an existing venv, reinstall the editable project after dependency changes:
+For an existing virtual environment after dependency changes:
 
-```bash
+```powershell
 .\venv\Scripts\python.exe -m pip install -e .
 ```
 
 ## GUI Usage
 
-```bash
+Launch the desktop application with:
+
+```powershell
 .\venv\Scripts\python.exe gui.py
 ```
 
-The GUI includes three tabs:
+The GUI contains three primary tabs:
 
-- `Merge`: choose input/output folders, set the data start row, and run the spreadsheet merge.
-- `Format Checker`: convert messy Excel files into standardized workbooks before merging.
-- `DBF Breakdown`: choose a DBF file, analyze counts by column, create clean lists, and export results.
+### Merge
+
+* Choose input and output folders
+* Set the data start row
+* Run the spreadsheet merge
+
+### Format Checker
+
+* Scan input files
+* Convert and validate records
+* Review results in a table
+* Choose the output folder
+
+### DBF Breakdown
+
+* Select a DBF file
+* Analyze record counts by a selected column
+* Create clean lists
+* Export results
+
+The GUI also includes **Export to Mailing Template** for the template export workflow.
 
 ## CLI Usage
 
-```bash
+Run the merge process with:
+
+```powershell
 .\venv\Scripts\python.exe run_merge.py --outdir out
 ```
 
-Optional flags:
+### CLI Options
 
-- `--inputdir PATH` defaults to `ListInput`
-- `--start-row N` defaults to `8`
+| Flag          | Default     | Purpose        |
+| ------------- | ----------- | -------------- |
+| `--inputdir`  | `ListInput` | Input folder   |
+| `--start-row` | `8`         | First data row |
+| `--outdir`    | `out`       | Output folder  |
 
 ## Format Checker
 
-The Format Checker workflow converts messy `.xlsx` or `.xlsm` mailing-list files
-into standardized ListManager workbooks before they are merged. It writes one
-converted workbook per source file. Each converted workbook contains:
+The Format Checker converts messy `.xlsx`/`.xlsm` mailing lists into standardized workbooks.
 
-- `COMPANY`, `FULLNAME`, or `FIRSTLAST` as the main clean output sheet
-- `NEEDS_REVIEW` inside the same workbook
-- `CONVERSION_REPORT` inside the same workbook
+One output workbook is created per source file. Each workbook contains:
 
-Rows with warnings can still go to the main sheet. Rows with blocking issues,
-including international mail, missing required fields, invalid ZIPs, ZIPs not
-found in the local lookup, and state/ZIP mismatches, go to `NEEDS_REVIEW`.
-Duplicates are not removed during this stage.
+### `COMPANY` / `FULLNAME` / `FIRSTLAST`
 
-Run from the command line:
+The clean, standardized output sheet containing records that passed validation.
 
-```bash
+### `NEEDS_REVIEW`
+
+Contains rows with blocking issues, including:
+
+* International mail
+* Missing required fields
+* Invalid ZIPs
+* ZIPs not found in the local lookup
+* State/ZIP mismatches
+
+### `CONVERSION_REPORT`
+
+Contains details about the conversion and transformations performed on the source data.
+
+Rows with warnings still go to the main output sheet, while blocked rows are routed to `NEEDS_REVIEW`.
+
+> **Note:** Duplicates are not removed during the Format Checker stage.
+
+### Run from the CLI
+
+```powershell
 .\venv\Scripts\python.exe -m listmanager.format_checker.convert examples/messy_inputs examples/converted_outputs
 ```
 
-The input argument can be one Excel file or a folder of Excel files. The GUI has
-a separate `Format Checker` tab with scan, convert, results table, and output
-folder controls. The existing `Merge` tab remains for already standardized files.
+The input argument can be either:
+
+* A single Excel file
+* A folder containing Excel files
 
 ## Template Export
 
-After a workbook has been converted and reviewed, export its passed records into
-the official mailing list template:
+Template Export writes validated records into the official mailing-list template while preserving the template's existing structure.
 
-```bash
+The export preserves:
+
+* Template rows 1–7
+* Row 4 headers
+* Instructions
+* Example rows
+* Formatting
+* Tab names
+* Other template tabs
+
+The following sheets are intentionally excluded:
+
+* `NEEDS_REVIEW`
+* `CONVERSION_REPORT`
+
+### CLI
+
+```powershell
 .\venv\Scripts\python.exe -m listmanager.template_export input_converted.xlsx MailingListTemplate.xlsx output_template_ready.xlsx
 ```
 
-The exporter reads only the passed-records sheet from the converted workbook:
-`COMPANY`, `FULLNAME`, or `FIRSTLAST`. It writes those rows into the matching
-template tab, starting at row 8. Template rows 1-7, row 4 headers, instructions,
-examples, formatting, tab names, and other tabs are preserved. `NEEDS_REVIEW`
-and `CONVERSION_REPORT` are intentionally excluded.
+### GUI
 
-The same workflow is available in the GUI under `Export to Mailing Template`:
+The same workflow is available through **Export to Mailing Template**:
 
-1. Run the normal Format Checker conversion/validation process.
+1. Run the normal Format Checker conversion and validation process.
 2. Review the converted workbook if needed.
-3. Open `Export to Mailing Template`.
+3. Open **Export to Mailing Template**.
 4. Select the converted workbook.
 5. Select `MailingListTemplate.xlsx`.
 6. Choose where to save the template-ready workbook.
-7. Click `Export to Template`.
+7. Click **Export to Template**.
 
-## Local ZIP Lookup
+## ZIP/State Validation
 
-Runtime ZIP/state checks use `resources/zip_lookup/us_zip_state_lookup.csv`.
-The app does not call USPS, HUD, or any ZIP API while processing lists.
+### Fully Offline
 
-USPS City State Product was checked first because it is the official preferred
-source for city/state/ZIP validation. USPS publishes it through EPF/AIS access;
-the product page describes the data as encrypted and not exportable from the
-viewer, so it is not bundled here. HUD-USPS ZIP Code Crosswalk files are the
-preferred public fallback when you can place source CSVs under
-`resources/zip_lookup/source/`; HUD notes those files exclude PO Box only ZIPs
-and can miss a small number of active ZIP Codes.
+ZIP/state validation never calls USPS, HUD, or any ZIP API at runtime.
 
-The current bundled source is an archived third-party CSV fallback with ZIP,
-city, and state columns. It is not official USPS validation data. Rebuild the
-lookup after replacing or updating source files:
+The project uses a local lookup file so mailing-list validation can run without an internet connection or external API dependency.
 
-```bash
+### Data Sources
+
+The sourcing decision is:
+
+#### USPS City State Product
+
+The official preferred source. However, the published data is encrypted and non-exportable from the viewer, preventing it from being bundled directly with the application.
+
+#### HUD-USPS ZIP Code Crosswalk
+
+The preferred public fallback.
+
+Source CSV files can be placed under:
+
+```text
+resources/zip_lookup/source/
+```
+
+> **Caveat:** HUD notes that these files exclude PO-Box-only ZIPs and may miss a small number of active ZIP Codes.
+
+#### Bundled Fallback
+
+The project also includes an archived third-party CSV containing ZIP, city, and state columns.
+
+This is **not official USPS validation data** and is provided as a fallback.
+
+### Rebuilding the Lookup
+
+After replacing or updating the source files, rebuild the local lookup with:
+
+```powershell
 .\venv\Scripts\python.exe -m listmanager.zip_lookup.build_zip_lookup
 ```
 
-The build writes:
+This generates:
 
-- `resources/zip_lookup/us_zip_state_lookup.csv`
-- `resources/zip_lookup/build_report.txt`
+```text
+resources/zip_lookup/us_zip_state_lookup.csv
+resources/zip_lookup/build_report.txt
+```
 
-ZIP values are stored as text, so leading zeros such as `06110` are preserved.
-Census ZCTA data should only be used as a last resort because ZCTAs are Census
-geographic approximations, not USPS ZIP validation data.
+ZIP values are stored as text so leading zeros are preserved.
 
-International mail is intentionally moved to review output with
-`INTERNATIONAL_MAIL_REVIEW_REQUIRED` so it can be handled manually. This
-converter currently supports US mailing formats only.
+For example:
 
-## Build A Windows Executable
+```text
+06110
+```
 
-```bash
-.\venv\Scripts\python.exe -m pip install -e .[build]
+will remain `06110` rather than being converted to `6110`.
+
+> **Note:** Census ZCTA data should only be used as a last resort. ZCTAs are Census geographic approximations and are not equivalent to USPS ZIP validation data.
+
+### International Mail
+
+International mail is intentionally routed to review:
+
+```text
+INTERNATIONAL_MAIL_REVIEW_REQUIRED
+```
+
+ListManager currently supports **US mailing formats only**.
+
+## Build a Windows Executable
+
+Install the package with the build dependencies:
+
+```powershell
+.\venv\Scripts\python.exe -m pip install -e ".[build]"
+```
+
+Then build the executable:
+
+```powershell
 .\venv\Scripts\pyinstaller.exe --clean --noconfirm listmanager_gui.spec
 ```
 
-The packaged application is written to `dist/ListManager/`.
+The packaged application will be generated in:
+
+```text
+dist/ListManager/
+```
 
 ## Project Layout
 
 ```text
-src/listmanager/
-    core/
-        merge.py
-        normalize.py
-        validate.py
-        dbf_breakdown.py
-    cli.py
-    gui.py
+ListManager/
+├── src/
+│   └── listmanager/
+│       ├── core/
+│       │   ├── merge.py
+│       │   ├── normalize.py
+│       │   ├── validate.py
+│       │   └── dbf_breakdown.py
+│       │
+│       ├── format_checker/
+│       ├── zip_lookup/
+│       ├── template_export/
+│       ├── cli.py
+│       └── gui.py
+│
+├── resources/
+│   └── zip_lookup/
+│       ├── source/
+│       ├── us_zip_state_lookup.csv
+│       └── build_report.txt
+│
+├── run_merge.py
+├── requirements.txt
+├── listmanager_gui.spec
+└── ...
 ```
 
-The core processing logic is separate from the GUI so it can be used by both the
-desktop app and command-line entry points.
+The core processing logic is separated from the GUI so that both the desktop application and CLI entry points share the same underlying functionality.
+
+## Challenges & Lessons Learned
+
+### Sourcing Offline ZIP Validation Data
+
+Finding reliable ZIP validation data that could legally and practically be bundled with the application presented several challenges.
+
+The official USPS City/State product is encrypted and non-exportable, while HUD crosswalk files exclude PO-Box-only ZIPs.
+
+The project documents these tradeoffs and provides a rebuildable fallback system with:
+
+* Source data documentation
+* A lookup-generation script
+* A generated lookup file
+* A build report
+
+### Preserving ZIP Leading Zeros
+
+Spreadsheet applications frequently interpret ZIP codes as numeric values, which can corrupt codes such as:
+
+```text
+06110
+```
+
+ListManager explicitly stores ZIP values as text to preserve leading zeros throughout the processing pipeline.
+
+### Separating Core Logic from the UI
+
+All major processing functionality lives in the core package and is shared by the GUI and CLI entry points.
+
+This allows the same validation and transformation logic to be used for:
+
+* Interactive desktop workflows
+* Repeatable scripted workflows
+* Future automation
+
+### Designing for Non-Technical Users
+
+The GUI abstracts away many of the tedious and error-prone steps involved in preparing mailing lists.
+
+Instead of requiring coworkers to understand the implementation details of normalization, validation, file merging, and template formatting, the application exposes those operations through a guided workflow.
+
+## Future Improvements
+
+* Automated tests for merge and validation rules
+* Cross-platform packaging
+* Continuous integration on push
+* Expanded validation coverage
+* Additional automated data-quality checks
+* More robust configuration options for different mailing workflows
+
+## License
+
+TBD
